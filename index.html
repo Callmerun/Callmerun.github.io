@@ -97,18 +97,11 @@
     <div class="article-content">
         
         <p>在网上搜eclipse快捷键，可以搜出一大堆，大多罗列了n多的快捷键，估计大部分人看了以后都会头大的，我也头大，不过我一一尝试了一遍，整理出了eclipse最常用最有用，写代码必须用到的一些快捷键，大约只有网上快捷键大全的一半，减少大家的记忆量。如果大家把这些快捷键都很好的运用，写代码的效率一定会有提高。当然你也可以通过菜单栏中Window–&gt;Preferences–&gt;General–&gt;Keys来查看和修改快捷键绑定。</p>
-<h1 id="u7F16_u8F91"><a href="#u7F16_u8F91" class="headerlink" title="编辑"></a>编辑</h1><p>Ctrl+1 快速修复（最经典的快捷键,就不用多说了，可以解决很多问题，比如import类、try catch包围等）<br>Ctrl+Shift+F 格式化当前代码<br>Ctrl+Shift+M 添加类的import导入<br>Ctrl+Shift+O 组织类的import导入（既有Ctrl+Shift+M的作用，又可以帮你去除没用的导入，很有用）<br>Ctrl+Y 重做（与撤销Ctrl+Z相反）<br>Alt+/ 内容辅助（帮你省了多少次键盘敲打，太常用了）<br>Ctrl+D 删除当前行或者多行<br>Alt+↓ 当前行和下面一行交互位置（特别实用,可以省去先剪切,再粘贴了）<br>Alt+↑ 当前行和上面一行交互位置（同上）<br>Ctrl+Alt+↓ 复制当前行到下一行（复制增加）<br>Ctrl+Alt+↑ 复制当前行到上一行（复制增加）<br>Shift+Enter 在当前行的下一行插入空行（这时鼠标可以在当前行的任一位置,不一定是最后）<br>Ctrl+/ 注释当前行,再按则取消注释</p>
-<h1 id="u9009_u62E9"><a href="#u9009_u62E9" class="headerlink" title="选择"></a>选择</h1><p>Alt+Shift+↑ 选择封装元素<br>Alt+Shift+← 选择上一个元素<br>Alt+Shift+→ 选择下一个元素<br>Shift+← 从光标处开始往左选择字符<br>Shift+→ 从光标处开始往右选择字符<br>Ctrl+Shift+← 选中光标左边的单词<br>Ctrl+Shift+→ 选中光标又边的单词</p>
-<h1 id="u79FB_u52A8"><a href="#u79FB_u52A8" class="headerlink" title="移动"></a>移动</h1><p>Ctrl+← 光标移到左边单词的开头，相当于vim的b<br>Ctrl+→ 光标移到右边单词的末尾，相当于vim的e</p>
-<h1 id="u641C_u7D22"><a href="#u641C_u7D22" class="headerlink" title="搜索"></a>搜索</h1><p>Ctrl+K 参照选中的Word快速定位到下一个（如果没有选中word，则搜索上一次使用搜索的word）<br>Ctrl+Shift+K 参照选中的Word快速定位到上一个<br>Ctrl+J 正向增量查找（按下Ctrl+J后,你所输入的每个字母编辑器都提供快速匹配定位到某个单词,如果没有,则在状态栏中显示没有找到了,查一个单词时,特别实用,要退出这个模式，按escape建）<br>Ctrl+Shift+J 反向增量查找（和上条相同,只不过是从后往前查）<br>Ctrl+Shift+U 列出所有包含字符串的行<br>Ctrl+H 打开搜索对话框<br>Ctrl+G 工作区中的声明<br>Ctrl+Shift+G 工作区中的引用</p>
-<h1 id="u5BFC_u822A"><a href="#u5BFC_u822A" class="headerlink" title="导航"></a>导航</h1><p>Ctrl+Shift+T 搜索类（包括工程和关联的第三jar包）<br>Ctrl+Shift+R 搜索工程中的文件<br>Ctrl+E 快速显示当前Editer的下拉列表（如果当前页面没有显示的用黑体表示）<br>F4 打开类型层次结构<br>F3 跳转到声明处<br>Alt+← 前一个编辑的页面<br>Alt+→ 下一个编辑的页面（当然是针对上面那条来说了）<br>Ctrl+PageUp/PageDown 在编辑器中，切换已经打开的文件</p>
-<h1 id="u8C03_u8BD5"><a href="#u8C03_u8BD5" class="headerlink" title="调试"></a>调试</h1><p>F5 单步跳入<br>F6 单步跳过<br>F7 单步返回<br>F8 继续<br>Ctrl+Shift+D 显示变量的值<br>Ctrl+Shift+B 在当前行设置或者去掉断点<br>Ctrl+R 运行至行(超好用，可以节省好多的断点)</p>
-<h1 id="u91CD_u6784"><a href="#u91CD_u6784" class="headerlink" title="重构"></a>重构</h1><p>（一般重构的快捷键都是Alt+Shift开头的了）<br>Alt+Shift+R 重命名方法名、属性或者变量名 （是我自己最爱用的一个了,尤其是变量和类的Rename,比手工方法能节省很多劳动力）<br>Alt+Shift+M 把一段函数内的代码抽取成方法 （这是重构里面最常用的方法之一了,尤其是对一大堆泥团代码有用）<br>Alt+Shift+C 修改函数结构（比较实用,有N个函数调用了这个方法,修改一次搞定）<br>Alt+Shift+L 抽取本地变量（ 可以直接把一些魔法数字和字符串抽取成一个变量,尤其是多处调用的时候）<br>Alt+Shift+F 把Class中的local变量变为field变量 （比较实用的功能）<br>Alt+Shift+I 合并变量（可能这样说有点不妥Inline）<br>Alt+Shift+V 移动函数和变量（不怎么常用）<br>Alt+Shift+Z 重构的后悔药（Undo）</p>
-<h1 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h1><p>Alt+Enter 显示当前选择资源的属性，windows下的查看文件的属性就是这个快捷键，通常用来查看文件在windows中的实际路径<br>Ctrl+↑ 文本编辑器 上滚行<br>Ctrl+↓ 文本编辑器 下滚行<br>Ctrl+M 最大化当前的Edit或View （再按则反之）<br>Ctrl+O 快速显示 OutLine（不开Outline窗口的同学，这个快捷键是必不可少的）<br>Ctrl+T 快速显示当前类的继承结构<br>Ctrl+W 关闭当前Editer（windows下关闭打开的对话框也是这个，还有qq、旺旺、浏览器等都是）<br>Ctrl+L 文本编辑器 转至行<br>F2 显示工具提示描述<br>引用于：<a href="http://rongmayisheng.com/post/eclipse%E6%9C%80%E6%9C%89%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86" target="_blank" rel="external">eclipse最有用快捷键整理</a></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/post/eclipse最有用快捷键整理/#more">Read More</a>
           
        </p>
     </div>
@@ -164,68 +157,18 @@
 </header>
     <div class="article-content">
         
-        <h1 id="u6982_u8FF0"><a href="#u6982_u8FF0" class="headerlink" title="概述"></a>概述</h1><p>这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：<br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="external">GitHub Pages + Hexo搭建博客 </a></p>
+        <h1 id="u6982_u8FF0"><a href="#u6982_u8FF0" class="headerlink" title="概述"></a>概述</h1><p>这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：<br><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub Pages + Hexo搭建博客 </a></p>
 <p>Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。</p>
 <p>其实，Hexo生成的网站文件中有.gitignore文件，因此它的本意也是想我们将Hexo生成的网站文件存放到GitHub上进行管理的（而不是用U盘或者云备份啦(╬▔皿▔)凸）。这样，不仅解决了上述的问题，还可以通过git的版本控制追踪你的博文的修改过程，是极赞的。</p>
 <p>但是，如果每一个GitHub Pages都需要创建一个额外的仓库来存放Hexo网站文件，我感觉很麻烦（10个项目需要20个仓库(ˉ▽ˉ；)…）。</p>
 <p>所以，我利用了分支！！！</p>
 <p>简单地说，每个想建立GitHub Pages的仓库，起码有两个分支，一个用来存放Hexo网站的文件，一个用来发布网站。</p>
 <p>下面以我的博客作为例子详细地讲述。</p>
-<hr>
-<h1 id="u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><a href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B" class="headerlink" title="我的博客搭建流程"></a>我的博客搭建流程</h1><blockquote>
-<ul>
-<li><p>创建仓库，<code>CrazyMilk.github.io</code>；</p>
-</li>
-<li><p>创建两个分支：master 与 hexo；</p>
-</li>
-<li><p>设置<code>hexo为默认分支</code>（因为我们只需要手动管理这个分支上的Hexo网站文件）；</p>
-</li>
-<li><p>使用<code>git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git</code>拷贝仓库；</p>
-</li>
-<li><p>在<code>本地CrazyMilk.github.io文件夹</code>下通过<code>Git bash</code>依次执行<br><code>npm install hexo</code><br><code>hexo init</code><br><code>npm install</code><br><code>npm install hexo-deployer-git</code>（此时当前分支应显示为<code>hexo</code>）;</p>
-</li>
-<li><p>修改<code>_config.yml</code>中的deploy参数，<code>分支应为master</code>；</p>
-</li>
-<li><p>依次执行<br><code>git add .</code><br><code>git commit -m “…”</code><br><code>git push origin hexo</code>提交网站相关的文件；</p>
-</li>
-<li><p>执行<code>hexo generate -d</code>生成网站并部署到GitHub上。</p>
-</li>
-</ul>
-</blockquote>
-<p>这样一来，在GitHub上的CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
-<hr>
-<h1 id="u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><a href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B" class="headerlink" title="我的博客管理流程"></a>我的博客管理流程</h1><h3 id="1-_u65E5_u5E38_u4FEE_u6539"><a href="#1-_u65E5_u5E38_u4FEE_u6539" class="headerlink" title="1.日常修改"></a>1.日常修改</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
-<blockquote>
-<ul>
-<li>依次执行<br><code>git add .</code><br><code>git commit -m “…”</code><br><code>git push origin hexo</code>指令将改动推送到GitHub（此时当前分支应为<code>hexo</code>）；</li>
-<li>然后才执行<code>hexo generate -d</code>发布网站到master分支上。</li>
-</ul>
-</blockquote>
-<p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
-<h3 id="2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><a href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931" class="headerlink" title="2.本地资料丢失"></a>2.本地资料丢失</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<blockquote>
-<ul>
-<li><p>使用<code>git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git</code>拷贝仓库（默认分支为<code>hexo</code>）；</p>
-</li>
-<li><p>在本地新拷贝的CrazyMilk.github.io文件夹下通过Git bash依次执行下列指令：<br><code>npm install hexo</code><br><code>npm install</code><br><code>npm install hexo-deployer-git</code>（记得，不需要hexo init这条指令）。</p>
-</li>
-</ul>
-</blockquote>
-<hr>
-<h1 id="Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><a href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A" class="headerlink" title="Markdown文件头格式(即front-matter)："></a>Markdown文件头格式(即<code>front-matter</code>)：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---&#10;title: GitHub Pages + Hexo&#25645;&#24314;&#21338;&#23458;&#10;date: 2016-01-26 09:33:39&#10;categories: blog &#10;tags:&#10;  - GitHub Pages&#10;  - Hexo&#10;  - &#21338;&#23458;&#10;---</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>注意：</strong></p>
-<blockquote>
-<ul>
-<li><code>_config.yml</code>文件中的每个<code>属性值</code>前面必须留一个<code>空格</code>，建议在 Sublime/Notepad++ 中开启显示所有空格模式。</li>
-<li>另每篇文章的 <code>front-matter</code> 也要注意这个问题。</li>
-</ul>
-</blockquote>
-<h1 id="Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><a href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A" class="headerlink" title="Markdown语法手册："></a>Markdown语法手册：</h1><p><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Cmd Markdown 简明语法手册 作业部落</a><br><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-%E9%AB%98%E9%98%B6%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C" target="_blank" rel="external">Cmd Markdown 高阶语法手册 作业部落</a></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/post/GitHub-Pages-Hexo搭建博客/#more">Read More</a>
           
        </p>
     </div>
@@ -413,31 +356,11 @@
 <p>第三点：若wait方法参数中带时间，则除了notify和notifyAll被调用能激活处于wait状态（等待状态）的线程进入锁竞争外，在其他线程中interrupt它或者参数时间到了之后，该线程也将被激活到竞争状态。</p>
 <p>第四点：wait方法被调用的线程必须获得之前执行到wait时释放掉的锁重新获得才能够恢复执行。</p>
 </blockquote>
-<p>2  notify方法和notifyAll方法：</p>
-<blockquote>
-<p>notify方法通知调用了wait方法，但是尚未激活的一个线程进入线程调度队列（即进入锁竞争），注意不是立即执行。并且具体是哪一个线程不能保证。另外一点就是被唤醒的这个线程一定是在等待wait所释放的锁。</p>
-<p>notifyAll方法则唤醒所有调用了wait方法，尚未激活的进程进入竞争队列。</p>
-</blockquote>
-<p>3 synchronized关键字：</p>
-<blockquote>
-<p>第一点：synchronized用来标识一个普通方法时，表示一个线程要执行该方法，必须取得该方法所在的对象的锁。</p>
-<p>第二点：synchronized用来标识一个静态方法时，表示一个线程要执行该方法，必须获得该方法所在的类的类锁。</p>
-<p>第三点：synchronized修饰一个代码块。类似这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">    <span class="comment">//code....</span></span><br><span class="line">&#125;。</span><br></pre></td></tr></table></figure></p>
-<p>表示一个线程要执行该代码块，必须获得<code>obj</code>的锁。这样做的目的是减小锁的粒度，保证当不同块所需的锁不冲突时不用对整个对象加锁。利用零长度的byte数组对象做obj非常经济。</p>
-</blockquote>
-<p>4 atomic action（原子操作）：</p>
-<blockquote>
-<p>在JAVA中，以下两点操作是原子操作。但是c和c++中并不如此。</p>
-<ul>
-<li>第一点：对引用变量和除了long和double之外的原始数据类型变量进行读写。</li>
-<li>第二点：对所有声明为volatile的变量（包括long和double）的读写。</li>
-<li>另外：在java.util.concurrent和java.util.concurrent.atomic包中提供了一些不依赖于同步机制的线程安全的类和方法。</li>
-</ul>
-</blockquote>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/post/关于Java多线程的一些知识补充/#more">Read More</a>
           
        </p>
     </div>

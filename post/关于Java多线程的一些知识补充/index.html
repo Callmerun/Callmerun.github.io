@@ -27,7 +27,7 @@
 该方法属于Object的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用wait所在的代码块的锁，并在其他线程调用notify或者notifyAll方法时恢复到竞争锁状态（一旦获得锁就恢复执行）。
 调用wait方法需要注意几点：
 第一点：wait被调用的时候必须在拥有锁（即s">
-<meta property="og:updated_time" content="2016-01-26T05:47:26.872Z">
+<meta property="og:updated_time" content="2016-01-26T09:03:43.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Java多线程的一些知识补充">
 <meta name="twitter:description" content="JAVA多线程同步主要依赖于若干方法和关键字
@@ -127,6 +127,7 @@
 <p>第三点：若wait方法参数中带时间，则除了notify和notifyAll被调用能激活处于wait状态（等待状态）的线程进入锁竞争外，在其他线程中interrupt它或者参数时间到了之后，该线程也将被激活到竞争状态。</p>
 <p>第四点：wait方法被调用的线程必须获得之前执行到wait时释放掉的锁重新获得才能够恢复执行。</p>
 </blockquote>
+<a id="more"></a>
 <p>2  notify方法和notifyAll方法：</p>
 <blockquote>
 <p>notify方法通知调用了wait方法，但是尚未激活的一个线程进入线程调度队列（即进入锁竞争），注意不是立即执行。并且具体是哪一个线程不能保证。另外一点就是被唤醒的这个线程一定是在等待wait所释放的锁。</p>
