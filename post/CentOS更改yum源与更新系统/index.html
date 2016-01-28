@@ -4,38 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>关于Java多线程的一些知识补充 | 陆地行走的鱼</title>
+    <title>CentOS更改yum源与更新系统 | 陆地行走的鱼</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Callmerun">
     
 
     
-    <meta name="description" content="JAVA多线程同步主要依赖于若干方法和关键字
-1 wait方法：
-
-该方法属于Object的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用wait所在的代码块的锁，并在其他线程调用notify或者notifyAll方法时恢复到竞争锁状态（一旦获得锁就恢复执行）。
-调用wait方法需要注意几点：
-第一点：wait被调用的时候必须在拥有锁（即s">
+    <meta name="description" content="CentOS更改yum源与更新系统[1] 首先备份/etc/yum.repos.d/CentOS-Base.repo[root@localhost yum.repos.d]#mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+[2] 进入yum源配置文件所在文件夹[root@localhost">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Java多线程的一些知识补充">
-<meta property="og:url" content="http://callmerun.github.io/post/关于Java多线程的一些知识补充/index.html">
+<meta property="og:title" content="CentOS更改yum源与更新系统">
+<meta property="og:url" content="http://callmerun.github.io/post/CentOS更改yum源与更新系统/index.html">
 <meta property="og:site_name" content="陆地行走的鱼">
-<meta property="og:description" content="JAVA多线程同步主要依赖于若干方法和关键字
-1 wait方法：
-
-该方法属于Object的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用wait所在的代码块的锁，并在其他线程调用notify或者notifyAll方法时恢复到竞争锁状态（一旦获得锁就恢复执行）。
-调用wait方法需要注意几点：
-第一点：wait被调用的时候必须在拥有锁（即s">
-<meta property="og:updated_time" content="2016-01-26T09:03:43.258Z">
+<meta property="og:description" content="CentOS更改yum源与更新系统[1] 首先备份/etc/yum.repos.d/CentOS-Base.repo[root@localhost yum.repos.d]#mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+[2] 进入yum源配置文件所在文件夹[root@localhost">
+<meta property="og:updated_time" content="2016-01-28T07:02:04.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Java多线程的一些知识补充">
-<meta name="twitter:description" content="JAVA多线程同步主要依赖于若干方法和关键字
-1 wait方法：
-
-该方法属于Object的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用wait所在的代码块的锁，并在其他线程调用notify或者notifyAll方法时恢复到竞争锁状态（一旦获得锁就恢复执行）。
-调用wait方法需要注意几点：
-第一点：wait被调用的时候必须在拥有锁（即s">
+<meta name="twitter:title" content="CentOS更改yum源与更新系统">
+<meta name="twitter:description" content="CentOS更改yum源与更新系统[1] 首先备份/etc/yum.repos.d/CentOS-Base.repo[root@localhost yum.repos.d]#mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+[2] 进入yum源配置文件所在文件夹[root@localhost">
 
     
     <link rel="alternative" href="/atom.xml" title="陆地行走的鱼" type="application/atom+xml">
@@ -97,14 +85,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/post/关于Java多线程的一些知识补充/" title="关于Java多线程的一些知识补充" itemprop="url">关于Java多线程的一些知识补充</a>
+      <a href="/post/CentOS更改yum源与更新系统/" title="CentOS更改yum源与更新系统" itemprop="url">CentOS更改yum源与更新系统</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Callmerun" target="_blank" itemprop="author">Callmerun</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-25T07:16:55.000Z" itemprop="datePublished"> 发表于 2016-01-25</time>
+    <time datetime="2016-01-28T06:57:26.000Z" itemprop="datePublished"> 发表于 2016-01-28</time>
     
   </p>
 </header>
@@ -113,42 +101,17 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF"><span class="toc-number">1.</span> <span class="toc-text">CentOS更改yum源与更新系统</span></a></li></ol>
 		
 		</div>
 		
-		<p>JAVA多线程同步主要依赖于若干方法和关键字</p>
-<p>1 wait方法：</p>
-<blockquote>
-<p>该方法属于<code>Object</code>的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用wait所在的代码块的锁，并在其他线程调用notify或者notifyAll方法时恢复到竞争锁状态（一旦获得锁就恢复执行）。</p>
-<p>调用wait方法需要注意几点：</p>
-<p>第一点：wait被调用的时候必须在拥有锁（即<code>synchronized</code>修饰的）的代码块中。</p>
-<p>第二点：恢复执行后，从wait的下一条语句开始执行，因而wait方法总是应当在<code>while循环</code>中调用，以免出现恢复执行后继续执行的条件不满足却继续执行的情况。</p>
-<p>第三点：若wait方法参数中带时间，则除了notify和notifyAll被调用能激活处于wait状态（等待状态）的线程进入锁竞争外，在其他线程中interrupt它或者参数时间到了之后，该线程也将被激活到竞争状态。</p>
-<p>第四点：wait方法被调用的线程必须获得之前执行到wait时释放掉的锁重新获得才能够恢复执行。</p>
-</blockquote>
-<a id="more"></a>
-<p>2  notify方法和notifyAll方法：</p>
-<blockquote>
-<p>notify方法通知调用了wait方法，但是尚未激活的一个线程进入线程调度队列（即进入锁竞争），注意不是立即执行。并且具体是哪一个线程不能保证。另外一点就是被唤醒的这个线程一定是在等待wait所释放的锁。</p>
-<p>notifyAll方法则唤醒所有调用了wait方法，尚未激活的进程进入竞争队列。</p>
-</blockquote>
-<p>3 synchronized关键字：</p>
-<blockquote>
-<p>第一点：synchronized用来标识一个普通方法时，表示一个线程要执行该方法，必须取得该方法所在的对象的锁。</p>
-<p>第二点：synchronized用来标识一个静态方法时，表示一个线程要执行该方法，必须获得该方法所在的类的类锁。</p>
-<p>第三点：synchronized修饰一个代码块。类似这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">    <span class="comment">//code....</span></span><br><span class="line">&#125;。</span><br></pre></td></tr></table></figure></p>
-<p>表示一个线程要执行该代码块，必须获得<code>obj</code>的锁。这样做的目的是减小锁的粒度，保证当不同块所需的锁不冲突时不用对整个对象加锁。利用零长度的byte数组对象做obj非常经济。</p>
-</blockquote>
-<p>4 atomic action（原子操作）：</p>
-<blockquote>
-<p>在JAVA中，以下两点操作是原子操作。但是c和c++中并不如此。</p>
-<ul>
-<li>第一点：对引用变量和除了long和double之外的原始数据类型变量进行读写。</li>
-<li>第二点：对所有声明为volatile的变量（包括long和double）的读写。</li>
-<li>另外：在java.util.concurrent和java.util.concurrent.atomic包中提供了一些不依赖于同步机制的线程安全的类和方法。</li>
-</ul>
-</blockquote>
+		<h1 id="CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF"><a href="#CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF" class="headerlink" title="CentOS更改yum源与更新系统"></a>CentOS更改yum源与更新系统</h1><p>[1] 首先备份/etc/yum.repos.d/CentOS-Base.repo<br>[root@localhost yum.repos.d]#<code>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</code></p>
+<p>[2] 进入yum源配置文件所在文件夹<br>[root@localhost yum.repos.d]#<code>cd /etc/yum.repos.d/</code></p>
+<p>[3] 下载163的yum源配置文件，放入/etc/yum.repos.d/(操作前请做好相应备份)</p>
+<p>[root@localhost yum.repos.d]#<code>wget http://mirrors.163.com/.help/CentOS6-Base-163.repo</code></p>
+<p>[4] 运行yum makecache生成缓存<br>[root@localhost yum.repos.d]#<code>yum clean all</code><br>[root@localhost yum.repos.d]#<code>yum makecache</code></p>
+<p>[5] 更新系统<br>[root@localhost yum.repos.d]# <code>yum -y update</code></p>
+<p>[6] 安装vim编辑器<br>[root@localhost ~]#<code>yum -y install vim*</code></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -156,13 +119,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Java/">Java</a>
+  <a class="article-category-link" href="/categories/Linux/">Linux</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Java/">Java</a><a href="/tags/多线程/">多线程</a>
+  <span></span> <a href="/tags/CentOS/">CentOS</a><a href="/tags/Linux/">Linux</a>
   </div>
 
 </div>
@@ -171,7 +134,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://callmerun.github.io/post/关于Java多线程的一些知识补充/" data-title="关于Java多线程的一些知识补充 | 陆地行走的鱼" data-tsina="null" class="share clearfix">
+	  <div data-url="http://callmerun.github.io/post/CentOS更改yum源与更新系统/" data-title="CentOS更改yum源与更新系统 | 陆地行走的鱼" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -184,19 +147,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/post/Java-泛型/" title="Java 泛型">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Java 泛型</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/post/Hexo具体配置参考/"  title="Hexo具体配置参考">
+<a href="/post/常见Linux错误/"  title="常见Linux错误">
  <strong>下一篇：</strong><br/> 
- <span>Hexo具体配置参考
+ <span>常见Linux错误
 </span>
 </a>
 </div>
@@ -211,7 +166,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF"><span class="toc-number">1.</span> <span class="toc-text">CentOS更改yum源与更新系统</span></a></li></ol>
  
   </div>
 
