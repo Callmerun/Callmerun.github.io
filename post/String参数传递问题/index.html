@@ -4,29 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>GitHub Pages + Hexo搭建博客 | 陆地行走的鱼</title>
+    <title>String参数传递问题 | 陆地行走的鱼</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Callmerun">
     
 
     
-    <meta name="description" content="概述这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：GitHub Pages + Hexo搭建博客 
-Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。
-其实，Hexo生成的网站文件中有.">
+    <meta name="description" content="一道在面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub Pages + Hexo搭建博客">
-<meta property="og:url" content="http://callmerun.github.io/post/GitHub-Pages-Hexo搭建博客/index.html">
+<meta property="og:title" content="String参数传递问题">
+<meta property="og:url" content="http://callmerun.github.io/post/String参数传递问题/index.html">
 <meta property="og:site_name" content="陆地行走的鱼">
-<meta property="og:description" content="概述这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：GitHub Pages + Hexo搭建博客 
-Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。
-其实，Hexo生成的网站文件中有.">
-<meta property="og:updated_time" content="2016-01-28T06:00:53.357Z">
+<meta property="og:description" content="一道在面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str);">
+<meta property="og:updated_time" content="2016-02-22T08:54:15.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub Pages + Hexo搭建博客">
-<meta name="twitter:description" content="概述这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：GitHub Pages + Hexo搭建博客 
-Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。
-其实，Hexo生成的网站文件中有.">
+<meta name="twitter:title" content="String参数传递问题">
+<meta name="twitter:description" content="一道在面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str);">
 
     
     <link rel="alternative" href="/atom.xml" title="陆地行走的鱼" type="application/atom+xml">
@@ -88,14 +82,14 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/post/GitHub-Pages-Hexo搭建博客/" title="GitHub Pages + Hexo搭建博客" itemprop="url">GitHub Pages + Hexo搭建博客</a>
+      <a href="/post/String参数传递问题/" title="String参数传递问题" itemprop="url">String参数传递问题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Callmerun" target="_blank" itemprop="author">Callmerun</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-26T01:33:39.000Z" itemprop="datePublished"> 发表于 2016-01-26</time>
+    <time datetime="2016-02-22T08:17:35.000Z" itemprop="datePublished"> 发表于 2016-02-22</time>
     
   </p>
 </header>
@@ -104,78 +98,34 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u6982_u8FF0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><span class="toc-number">2.</span> <span class="toc-text">我的博客搭建流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><span class="toc-number">3.</span> <span class="toc-text">我的博客管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u65E5_u5E38_u4FEE_u6539"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.日常修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.本地资料丢失</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><span class="toc-number">4.</span> <span class="toc-text">Markdown文件头格式(即front-matter)：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><span class="toc-number">5.</span> <span class="toc-text">Markdown语法手册：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u53C2_u8003"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h1 id="u6982_u8FF0"><a href="#u6982_u8FF0" class="headerlink" title="概述"></a>概述</h1><p>这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：<br><a href="http://Callmerun.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub Pages + Hexo搭建博客 </a></p>
-<p>Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。</p>
-<p>其实，Hexo生成的网站文件中有.gitignore文件，因此它的本意也是想我们将Hexo生成的网站文件存放到GitHub上进行管理的（而不是用U盘或者云备份啦(╬▔皿▔)凸）。这样，不仅解决了上述的问题，还可以通过git的版本控制追踪你的博文的修改过程，是极赞的。</p>
-<p>但是，如果每一个GitHub Pages都需要创建一个额外的仓库来存放Hexo网站文件，我感觉很麻烦（10个项目需要20个仓库(ˉ▽ˉ；)…）。</p>
-<p>所以，我利用了分支！！！</p>
-<p>简单地说，每个想建立GitHub Pages的仓库，起码有两个分支，一个用来存放Hexo网站的文件，一个用来发布网站。</p>
-<p>下面以我的博客作为例子详细地讲述。</p>
-<a id="more"></a>
-<hr>
-<h1 id="u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><a href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B" class="headerlink" title="我的博客搭建流程"></a>我的博客搭建流程</h1><blockquote>
-<ul>
-<li><p>创建仓库，<code>Callmerun.github.io</code>；</p>
-</li>
-<li><p>创建两个分支：master 与 hexo；</p>
-</li>
-<li><p>设置<code>hexo为默认分支</code>（因为我们只需要手动管理这个分支上的Hexo网站文件）；</p>
-</li>
-<li><p>使用<code>git clone git@github.com:Callmerun/Callmerun.github.io.git</code>拷贝仓库；</p>
-</li>
-<li><p>在<code>本地Callmerun.github.io文件夹</code>下通过<code>Git bash</code>依次执行<br><code>npm install hexo</code><br><code>hexo init</code><br><code>npm install</code><br><code>npm install hexo-deployer-git</code>（此时当前分支应显示为<code>hexo</code>）;</p>
-</li>
-<li><p>修改<code>_config.yml</code>中的deploy参数，<code>分支应为master</code>；</p>
-</li>
-<li><p>依次执行<br><code>git add .</code><br><code>git commit -m “…”</code><br><code>git push origin hexo</code>提交网站相关的文件；</p>
-</li>
-<li><p>执行<code>hexo generate -d</code>生成网站并部署到GitHub上。</p>
-</li>
-</ul>
-</blockquote>
-<p>这样一来，在GitHub上的Callmerun.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
-<hr>
-<h1 id="u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><a href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B" class="headerlink" title="我的博客管理流程"></a>我的博客管理流程</h1><h3 id="1-_u65E5_u5E38_u4FEE_u6539"><a href="#1-_u65E5_u5E38_u4FEE_u6539" class="headerlink" title="1.日常修改"></a>1.日常修改</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+		<p>一道在面试中经常会碰到的面试题<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str = <span class="string">"Test"</span>;</span><br><span class="line"></span><br><span class="line">        changeStr(str);</span><br><span class="line"></span><br><span class="line">        System.out.println(str);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">changeStr</span><span class="params">(String old)</span></span>&#123;</span><br><span class="line">        old = old + <span class="string">"-change"</span>;</span><br><span class="line">        <span class="comment">//old = old.replace("s","x");</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：</p>
 <blockquote>
-<ul>
-<li>依次执行<br><code>git add .</code><br><code>git commit -m “…”</code><br><code>git push origin hexo</code>指令将改动推送到GitHub（此时当前分支应为<code>hexo</code>）；</li>
-<li>然后才执行<code>hexo generate -d</code>发布网站到master分支上。</li>
-</ul>
+<p>Test</p>
 </blockquote>
-<p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
-<h3 id="2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><a href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931" class="headerlink" title="2.本地资料丢失"></a>2.本地资料丢失</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<p>先把几个知识点列出来：</p>
 <blockquote>
-<ul>
-<li><p>使用<code>git clone git@github.com:Callmerun/Callmerun.github.io.git</code>拷贝仓库（默认分支为<code>hexo</code>）；</p>
-</li>
-<li><p>在本地新拷贝的Callmerun.github.io文件夹下通过Git bash依次执行下列指令：<br><code>npm install hexo</code><br><code>npm install</code><br><code>npm install hexo-deployer-git</code>（记得，不需要hexo init这条指令）。</p>
-</li>
-</ul>
+<p>值传递：<br>当基本类型作为参数传入方法时，无论该参数在方法内怎样被改变，外部的变量原型总是不变的。</p>
+<p>引用传递：<br>当方法传入的参数为引用数据类型(类、接口、数组)时， 方法改变参数变量的同时变量原型也会随之改变。</p>
 </blockquote>
-<hr>
-<h1 id="Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><a href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A" class="headerlink" title="Markdown文件头格式(即front-matter)："></a>Markdown文件头格式(即<code>front-matter</code>)：</h1><pre><code>---
-title: GitHub Pages + Hexo搭建博客
-date: 2016-01-26 09:33:39
-categories: Blog
-tags:
-  - GitHub
-  - Hexo
-  - 博客
----
-</code></pre><hr>
-<p><strong>注意：</strong></p>
+<p>其实，要想真正理解一个类或者一个API/框架的最直接的方法就是看源码，现在我看String类的构造函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.value = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">0</span>];</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(String original)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.value = original.value;</span><br><span class="line">       <span class="keyword">this</span>.hash = original.hash;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>   从中不难发现String实际是通过<code>char[]</code>来储存的。<br>   String就相当于是char[]的包装类。包装类的特质之一就是在对其值进行操作时会体现出其对应的基本类型的性质。</p>
+<p><code>另一种解读：</code></p>
 <blockquote>
-<ul>
-<li><code>_config.yml</code>文件中的每个<code>属性值</code>前面必须留一个<code>空格</code>，建议在 Sublime/Notepad++ 中开启显示所有空格模式。</li>
-<li>另每篇文章的 <code>front-matter</code> 也要注意这个问题。</li>
-</ul>
+<p>这个结果为什么是<code>Test</code>呢？经过查阅资料，原来是String虽然以对象的形式存在，但仍认为是基本数据类型，<br> 就像Integer、Double那样，虽然是基本类型的包装类，但仍然认为是基本数据类型。<br>既然认为是基本数据类型，因此无论在方法中如何操作，都不会影响到外界。</p>
+<p>其实，换个角度，也可以发现这样是错误的。<br>首先，大家都知道字符串是不可改变的，简单理解即可，不做深入讨论。</p>
+<p>当我们把字符串当成参数传入方法时，传递的是值，是一个指针，这个指针指向了堆区的真实字符串，<br>因此在方法中可以读到这个字符串，但是仅仅是能读到而已，当我们试图做如下操作时：<br><code>str = str.replace(“a”,”b”);</code><br>后边的str中保存的是原来的指针，的确是可以读到原来的字符串，然后执行替换操作，但是替换操作执行时，<br>绝对不可能去修改原来的字符串，因为字符串是不可变的，因此只能是在堆区产生一个新的字符串，然后把新字符串的地址(指针)赋给str。</p>
+<p>此时str中保存的已经不再是原来的指针，因此读出的内容发生了变化，但不代表原来指针指向的内容发生了变化。</p>
 </blockquote>
-<h1 id="Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><a href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A" class="headerlink" title="Markdown语法手册："></a>Markdown语法手册：</h1><p><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Cmd Markdown 简明语法手册 作业部落</a><br><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-%E9%AB%98%E9%98%B6%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C" target="_blank" rel="external">Cmd Markdown 高阶语法手册 作业部落</a></p>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><p><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">hexo系列教程：（三）hexo博客的配置、使用</a><br><a href="http://wuchong.me/blog/2014/01/17/use-github-to-manage-hexo-source/" target="_blank" rel="external">使用GitHub来管理博客源文件 </a></p>
+<p>另外，顺便再补充一个知识点。<br>关于<code>Integer i = 1;</code>和<code>Integer i = new Integer(1);</code>的区别。</p>
+<blockquote>
+<p><code>Integer i = 1;</code><br>会直接从常量池中找到1，然后把地址赋给i，这样充分利用常量池，节省内存，注意除了字符串，<br>其他类型的常量池都是有范围的，超范围了失效。</p>
+<p><code>Integer i = new Integer(1);</code><br>这样写，写多少次，就在内存中创建多少个对象，每个对象里都保存了一个数字1，<br>因此这样是极其浪费内存的，不推荐使用。</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -183,13 +133,13 @@ tags:
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Blog/">Blog</a>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/GitHub/">GitHub</a><a href="/tags/Hexo/">Hexo</a>
+  <span></span> <a href="/tags/Java/">Java</a><a href="/tags/面试/">面试</a>
   </div>
 
 </div>
@@ -198,7 +148,7 @@ tags:
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://callmerun.github.io/post/GitHub-Pages-Hexo搭建博客/" data-title="GitHub Pages + Hexo搭建博客 | 陆地行走的鱼" data-tsina="null" class="share clearfix">
+	  <div data-url="http://callmerun.github.io/post/String参数传递问题/" data-title="String参数传递问题 | 陆地行走的鱼" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -211,19 +161,11 @@ tags:
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/post/eclipse最有用快捷键整理/" title="Eclipse最有用快捷键整理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Eclipse最有用快捷键整理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/post/hello-world/"  title="Hello World">
+<a href="/post/单例模式/"  title="单例模式">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>单例模式
 </span>
 </a>
 </div>
@@ -238,7 +180,7 @@ tags:
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u6982_u8FF0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><span class="toc-number">2.</span> <span class="toc-text">我的博客搭建流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><span class="toc-number">3.</span> <span class="toc-text">我的博客管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u65E5_u5E38_u4FEE_u6539"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.日常修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.本地资料丢失</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><span class="toc-number">4.</span> <span class="toc-text">Markdown文件头格式(即front-matter)：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><span class="toc-number">5.</span> <span class="toc-text">Markdown语法手册：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u53C2_u8003"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+ 
  
   </div>
 
