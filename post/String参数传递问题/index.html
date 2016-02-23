@@ -11,16 +11,16 @@
     
 
     
-    <meta name="description" content="一道在面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str);">
+    <meta name="description" content="一道在Java面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String参数传递问题">
 <meta property="og:url" content="http://callmerun.github.io/post/String参数传递问题/index.html">
 <meta property="og:site_name" content="陆地行走的鱼">
-<meta property="og:description" content="一道在面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str);">
-<meta property="og:updated_time" content="2016-02-22T08:54:15.076Z">
+<meta property="og:description" content="一道在Java面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str">
+<meta property="og:updated_time" content="2016-02-23T02:31:36.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String参数传递问题">
-<meta name="twitter:description" content="一道在面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str);">
+<meta name="twitter:description" content="一道在Java面试中经常会碰到的面试题12345678910111213141516public class StringTest&amp;#123;    public static void main(String[] args)&amp;#123;        String str = &quot;Test&quot;;        changeStr(str);        System.out.println(str">
 
     
     <link rel="alternative" href="/atom.xml" title="陆地行走的鱼" type="application/atom+xml">
@@ -102,24 +102,34 @@
 		
 		</div>
 		
-		<p>一道在面试中经常会碰到的面试题<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str = <span class="string">"Test"</span>;</span><br><span class="line"></span><br><span class="line">        changeStr(str);</span><br><span class="line"></span><br><span class="line">        System.out.println(str);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">changeStr</span><span class="params">(String old)</span></span>&#123;</span><br><span class="line">        old = old + <span class="string">"-change"</span>;</span><br><span class="line">        <span class="comment">//old = old.replace("s","x");</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+		<p>一道在Java面试中经常会碰到的面试题<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String str = <span class="string">"Test"</span>;</span><br><span class="line"></span><br><span class="line">        changeStr(str);</span><br><span class="line"></span><br><span class="line">        System.out.println(str);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">changeStr</span><span class="params">(String old)</span></span>&#123;</span><br><span class="line">        <span class="comment">//String是final类型，下面的两句其实都是生成了另外一个String对象，old存放的地址值变化了</span></span><br><span class="line">        old = old + <span class="string">"-change"</span>;</span><br><span class="line">        <span class="comment">//old = old.replace("s","x");</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>输出结果：</p>
 <blockquote>
 <p>Test</p>
 </blockquote>
 <p>先把几个知识点列出来：</p>
 <blockquote>
-<p>值传递：<br>当基本类型作为参数传入方法时，无论该参数在方法内怎样被改变，外部的变量原型总是不变的。</p>
-<p>引用传递：<br>当方法传入的参数为引用数据类型(类、接口、数组)时， 方法改变参数变量的同时变量原型也会随之改变。</p>
+<p>1：按值传递是什么<br>指的是在方法调用时，传递的参数是按值的拷贝传递<br>按值传递重要特点：传递的是值的拷贝，也就是说传递后就互不相关了。</p>
+<p>2：按引用传递是什么<br>指的是在方法调用时，传递的参数是按引用进行传递，其实传递的引用的地址，也就是变量所对应的内存空间的地址。<br>按引用传递的重要特点：传递的是值的引用，也就是说传递前和传递后都指向同一个引用（也就是同一个内存空间）。</p>
+</blockquote>
+<p>总结：</p>
+<blockquote>
+<p>值传递：<br><strong>当基本类型作为参数传入方法时，无论该参数在方法内怎样被改变，外部的变量原型总是不变的</strong>。</p>
+<p>引用传递：<br><strong>当方法传入的参数为引用数据类型(类、接口、数组)时， 方法改变参数变量的同时变量原型也会随之改变</strong>。</p>
 </blockquote>
 <p>其实，要想真正理解一个类或者一个API/框架的最直接的方法就是看源码，现在我看String类的构造函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.value = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">0</span>];</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">String</span><span class="params">(String original)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.value = original.value;</span><br><span class="line">       <span class="keyword">this</span>.hash = original.hash;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
 <p>   从中不难发现String实际是通过<code>char[]</code>来储存的。<br>   String就相当于是char[]的包装类。包装类的特质之一就是在对其值进行操作时会体现出其对应的基本类型的性质。</p>
+<p>说明</p>
+<blockquote>
+<p>（1）：“在Java里面参数传递都是按值传递”这句话的意思是：<br>按值传递是传递的值的拷贝，按引用传递其实传递的是引用的地址值，所以统称按值传递。</p>
+</blockquote>
+<p>面试题看不懂可以参考这篇文章：<br><a href="http://blog.sina.com.cn/s/blog_4b622a8e0100c1bo.html" target="_blank" rel="external">java参数传递（超经典）</a></p>
 <p><code>另一种解读：</code></p>
 <blockquote>
 <p>这个结果为什么是<code>Test</code>呢？经过查阅资料，原来是String虽然以对象的形式存在，但仍认为是基本数据类型，<br> 就像Integer、Double那样，虽然是基本类型的包装类，但仍然认为是基本数据类型。<br>既然认为是基本数据类型，因此无论在方法中如何操作，都不会影响到外界。</p>
 <p>其实，换个角度，也可以发现这样是错误的。<br>首先，大家都知道字符串是不可改变的，简单理解即可，不做深入讨论。</p>
-<p>当我们把字符串当成参数传入方法时，传递的是值，是一个指针，这个指针指向了堆区的真实字符串，<br>因此在方法中可以读到这个字符串，但是仅仅是能读到而已，当我们试图做如下操作时：<br><code>str = str.replace(“a”,”b”);</code><br>后边的str中保存的是原来的指针，的确是可以读到原来的字符串，然后执行替换操作，但是替换操作执行时，<br>绝对不可能去修改原来的字符串，因为字符串是不可变的，因此只能是在堆区产生一个新的字符串，然后把新字符串的地址(指针)赋给str。</p>
-<p>此时str中保存的已经不再是原来的指针，因此读出的内容发生了变化，但不代表原来指针指向的内容发生了变化。</p>
+<p>当我们把字符串当成参数传入方法时，传递的是值，是一个指针，这个指针指向了堆区的真实字符串，<br>因此在方法中可以读到这个字符串，但是仅仅是能读到而已，当我们试图做如下操作时：<br><code>str = str.replace(“a”,”b”);</code><br>后边的str中保存的是原来的指针，的确是可以读到原来的字符串，然后执行替换操作，但是替换操作执行时，<br>绝对不可能去修改原来的字符串，因为字符串是不可变的，因此只能是<strong>在堆区产生一个新的字符串，<br>然后把新字符串的地址(指针)赋给str</strong>。</p>
+<p><em>此时str中保存的已经不再是原来的指针，因此读出的内容发生了变化，但不代表原来指针指向的内容发生了变化</em>。</p>
 </blockquote>
 <p>另外，顺便再补充一个知识点。<br>关于<code>Integer i = 1;</code>和<code>Integer i = new Integer(1);</code>的区别。</p>
 <blockquote>
