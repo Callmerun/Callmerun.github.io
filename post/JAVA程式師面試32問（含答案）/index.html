@@ -1,0 +1,622 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title> JAVA程式師面試32問（含答案） | 陆地行走的鱼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Callmerun">
+    
+
+    
+    <meta name="description" content="第一，談談final, finally, finalize的区别。
+第二，Anonymous Inner Class (匿名內部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?
+第三，Static Nested Class 和 Inner Class的不同，說得越多越好(面試題有的很籠統)。
+第四，&amp;amp;和&amp;amp;&amp;amp;的区别。">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" JAVA程式師面試32問（含答案）">
+<meta property="og:url" content="http://callmerun.github.io/post/JAVA程式師面試32問（含答案）/index.html">
+<meta property="og:site_name" content="陆地行走的鱼">
+<meta property="og:description" content="第一，談談final, finally, finalize的区别。
+第二，Anonymous Inner Class (匿名內部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?
+第三，Static Nested Class 和 Inner Class的不同，說得越多越好(面試題有的很籠統)。
+第四，&amp;amp;和&amp;amp;&amp;amp;的区别。">
+<meta property="og:updated_time" content="2016-03-23T03:50:53.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=" JAVA程式師面試32問（含答案）">
+<meta name="twitter:description" content="第一，談談final, finally, finalize的区别。
+第二，Anonymous Inner Class (匿名內部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?
+第三，Static Nested Class 和 Inner Class的不同，說得越多越好(面試題有的很籠統)。
+第四，&amp;amp;和&amp;amp;&amp;amp;的区别。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="陆地行走的鱼" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="陆地行走的鱼" title="陆地行走的鱼"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="陆地行走的鱼">陆地行走的鱼</a></h1>
+				<h2 class="blog-motto">爱编程，爱生活，不羁放纵爱自由</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/index">索引 | Index</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+				</ul>
+			</nav>
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/JAVA程式師面試32問（含答案）/" title=" JAVA程式師面試32問（含答案）" itemprop="url"> JAVA程式師面試32問（含答案）</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Callmerun" target="_blank" itemprop="author">Callmerun</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-23T03:29:59.000Z" itemprop="datePublished"> 发表于 2016-03-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>第一，談談final, finally, finalize的区别。</p>
+<p>第二，Anonymous Inner Class (匿名內部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?</p>
+<p>第三，Static Nested Class 和 Inner Class的不同，說得越多越好(面試題有的很籠統)。</p>
+<p>第四，&amp;和&amp;&amp;的区别。</p>
+<p>第五，HashMap和Hashtable的区别。</p>
+<p>第六，Collection 和 Collections的区别。</p>
+<p>第七，什么時候用assert。</p>
+<p>第八，GC是什么? 为什么要有GC?</p>
+<p>第九，String s = new String(“xyz”);创建了几个String Object?</p>
+<p>第十，Math.round(11.5)等於多少? Math.round(-11.5)等於多少?</p>
+<p>第十一，short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错?</p>
+<p>第十二，sleep() 和 wait() 有什么区别?</p>
+<p>第十三，Java有沒有goto?</p>
+<p>第十四，数組有沒有length()這个方法? String有沒有length()這个方法?</p>
+<p>第十五，Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型?</p>
+<p>第十六，Set里的元素是不能重复的，那么用什么方法來區分重复与否呢? 是用==还是equals()? 它們有何区别?</p>
+<p>第十七，给我一个你最常見到的runtime exception。</p>
+<p>第十八，error和exception有什么区别?</p>
+<p>第十九，List, Set, Map是否继承自Collection接口?</p>
+<p>第二十，abstract class和interface有什么区别?</p>
+<p>第二十一，abstract的method是否可同時是static,是否可同時是native，是否可同時是synchronized?</p>
+<p>第二十二，接口是否可继承接口? 抽象类是否可实现(implements)接口? 抽象类是否可继承实体类(concrete class)?</p>
+<p>第二十三，启動一个线程是用run()还是start()?</p>
+<p>第二十四，构造器Constructor是否可被override?</p>
+<p>第二十五，是否可以继承String类?</p>
+<p>第二十六，當一个线程進入一个对象的一个synchronized方法後，其它线程是否可進入此对象的其它方法?</p>
+<p>第二十七，try {}里有一个return語句，那么緊跟在這个try後的finally {}里的code會不會被執行，什么時候被執行，在return前还是後?</p>
+<p>第二十八，編程題: 用最有效率的方法算出2乘以8等於幾?</p>
+<p>第二十九，兩个对象值相同(x.equals(y) == true)，但卻可有不同的hashcode，這句話对不对?</p>
+<p>第三十，當一个对象被當作参数傳遞到一个方法後，此方法可改变這个对象的属性，並可返回变化後的結果，那么這里到底是值傳遞还是引用傳遞?</p>
+<p>第三十一，swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上?</p>
+<p>第三十二，編程題: 写一个Singleton出來。</p>
+<p>以下是答案</p>
+<p>第一，談談final, finally, finalize的区别。<br>final— 修飾符（关键字）如果一个类被声明为final，意味着它不能再派生出新的子类，不能作为父类被继承。因此一个类不能既被声明为 abstract的，又被声明为final的。將变量或方法声明为final，可以保證它們在使用中不被改变。被声明为final的变量必須在声明時给定初值，而在以後的引用中只能讀取，不可修改。被声明为final的方法也同样只能使用，不能重载<br>finally—再異常處理時提供 finally 塊來執行任何清除操作。如果拋出一个異常，那么相匹配的 catch 子句就會執行，然後控制就會進入 finally 塊（如果有的話）。<br>finalize —方法名。Java 技術允許使用 finalize() 方法在垃圾收集器將对象從內存中清除出去之前做必要的清理工作。這个方法是由垃圾收集器在確定這个对象沒有被引用時对這个对象調用的。它是在 Object 类中定義的，因此所有的类都继承了它。子类覆蓋 finalize() 方法以整理系統資源或者執行其他清理工作。finalize() 方法是在垃圾收集器刪除对象之前对這个对象調用的。</p>
+<p>第二，Anonymous Inner Class (匿名內部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?<br>匿名的內部类是沒有名字的內部类。不能extends(继承) 其它类，但一个內部类可以作为一个接口，由另一个內部类实现。</p>
+<p>第三，Static Nested Class 和 Inner Class的不同，說得越多越好(面試題有的很籠統)。<br>Nested Class （一般是C++的說法），Inner Class (一般是JAVA的說法)。Java內部类与C++嵌套类最大的不同就在於是否有指向外部的引用上。具体可見http: //www.frontfree.net/articles/services/view.asp?id=704&amp;page=1<br>注： 靜態內部类（Inner Class）意味着1创建一个static內部类的对象，不需要一个外部类对象，2不能從一个static內部类的一个对象訪問一个外部类对象</p>
+<p>第四，&amp;和&amp;&amp;的区别。<br>&amp;是位运算符。&amp;&amp;是布尔逻辑运算符。</p>
+<p>第五，HashMap和Hashtable的区别。<br>都属於Map接口的类，实现了將惟一鍵映射到特定的值上。<br>HashMap 类沒有分类或者排序。它允許一个 null 鍵和多个 null 值。<br>Hashtable 类似於 HashMap，但是不允許 null 鍵和 null 值。它也比 HashMap 慢，因为它是同步的。</p>
+<p>第六，Collection 和 Collections的区别。<br>Collections是个java.util下的类，它包含有各種有關集合操作的靜態方法。<br>Collection是个java.util下的接口，它是各種集合結构的父接口。<br>第七，什么時候用assert。<br>断言是一个包含布尔表达式的語句，在執行這个語句時假定該表达式为 true。如果表达式計算为 false，那么系統會報告一个 AssertionError。它用於調試目的：<br>assert(a &gt; 0); // throws an AssertionError if a &lt;= 0<br>断言可以有兩種形式：<br>assert Expression1 ;<br>assert Expression1 : Expression2 ;<br>Expression1 應該總是产生一个布尔值。<br>Expression2 可以是得出一个值的任意表达式。這个值用於生成顯示更多調試信息的 String 消息。<br>断言在默認情況下是禁用的。要在編譯時启用断言，需要使用 source 1.4 標記：<br>javac -source 1.4 Test.java<br>要在運行時启用断言，可使用 -enableassertions 或者 -ea 標記。<br>要在運行時選擇禁用断言，可使用 -da 或者 -disableassertions 標記。<br>要系統类中启用断言，可使用 -esa 或者 -dsa 標記。还可以在包的基礎上启用或者禁用断言。<br>可以在預計正常情況下不會到达的任何位置上放置断言。断言可以用於驗證傳遞给私有方法的参数。不過，断言不應該用於驗證傳遞给公有方法的参数，因为不管是否启用了断言，公有方法都必須檢查其参数。不過，既可以在公有方法中，也可以在非公有方法中利用断言測試後置條件。另外，断言不應該以任何方式改变程序的狀態。</p>
+<p>第八，GC是什么? 为什么要有GC? (基礎)。<br>GC是垃圾收集器。Java 程序員不用擔心內存管理，因为垃圾收集器會自動進行管理。要請求垃圾收集，可以調用下面的方法之一：<br>System.gc()<br>Runtime.getRuntime().gc()</p>
+<p>第九，String s = new String(“xyz”);创建了几个String Object?<br>兩个对象，一个是“xyx”,一个是指向“xyx”的引用对象s。</p>
+<p>第十，Math.round(11.5)等於多少? Math.round(-11.5)等於多少?<br>Math.round(11.5)返回（long）12，Math.round(-11.5)返回（long）-11;</p>
+<p>第十一，short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错?<br>short s1 = 1; s1 = s1 + 1;有错，s1是short型，s1+1是int型,不能顯式轉化为short型。可修改为s1 =(short)(s1 + 1) 。short s1 = 1; s1 += 1正確。</p>
+<p>第十二，sleep() 和 wait() 有什么区别? 搞线程的最愛<br>sleep()方法是使线程停止一段時間的方法。在sleep 時間間隔期滿後，线程不一定立即恢复執行。這是因为在那个時刻，其它线程可能正在運行而且沒有被調度为放棄執行，除非(a)“醒來”的线程具有更高的優先級<br>(b)正在運行的线程因为其它原因而阻塞。<br>wait()是线程交互時，如果线程对一个同步对象x 發出一个wait()調用，該线程會暫停執行，被調对象進入等待狀態，直到被喚醒或等待時間到。<br>第十三，Java有沒有goto?<br>Goto—java中的保留字，現在沒有在java中使用。</p>
+<p>第十四，数組有沒有length()這个方法? String有沒有length()這个方法？<br>数組沒有length()這个方法，有length的属性。<br>String有有length()這个方法。</p>
+<p>第十五，Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型?<br>方法的重写Overriding和重载Overloading是Java多態性的不同表現。重写Overriding是父类与子类之間多態性的一種表現，重载Overloading是一个类中多態性的一種表現。如果在子类中定義某方法与其父类有相同的名稱和参数，我們說該方法被重写 (Overriding)。子类的对象使用這个方法時，將調用子类中的定義，对它而言，父类中的定義如同被“屏蔽”了。如果在一个类中定義了多个同名的方法，它們或有不同的参数个数或有不同的参数类型，則稱为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型。</p>
+<p>第十六，Set里的元素是不能重复的，那么用什么方法來區分重复与否呢? 是用==还是equals()? 它們有何区别?<br>Set里的元素是不能重复的，那么用iterator()方法來區分重复与否。equals()是判讀兩个Set是否相等。<br>equals()和==方法决定引用值是否指向同一对象equals()在类中被覆蓋，为的是當兩个分離的对象的內容和类型相配的話，返回真值。</p>
+<p>第十七，给我一个你最常見到的runtime exception。<br>ArithmeticException, ArrayStoreException, BufferOverflowException, BufferUnderflowException, CannotRedoException, CannotUndoException, ClassCastException, CMMException, ConcurrentModificationException, DOMException, EmptyStackException, IllegalArgumentException, IllegalMonitorStateException, IllegalPathStateException, IllegalStateException,<br>ImagingOpException, IndexOutOfBoundsException, MissingResourceException, NegativeArraySizeException, NoSuchElementException, NullPointerException, ProfileDataException, ProviderException, RasterFormatException, SecurityException, SystemException, UndeclaredThrowableException, UnmodifiableSetException, UnsupportedOperationException</p>
+<p>第十八，error和exception有什么区别?<br>error 表示恢复不是不可能但很困難的情況下的一種嚴重問題。比如說內存溢出。不可能指望程序能處理這样的情況。<br>exception 表示一種設計或实现問題。也就是說，它表示如果程序運行正常，從不會發生的情況。<br>第十九，List, Set, Map是否继承自Collection接口?<br>List，Set是</p>
+<p>Map不是</p>
+<p>第二十，abstract class和interface有什么区别?<br>声明方法的存在而不去实现它的类被叫做抽象类（abstract class），它用於要创建一个体現某些基本行为的类，並为該类声明方法，但不能在該类中实现該类的情況。不能创建abstract 类的实例。然而可以创建一个变量，其类型是一个抽象类，並讓它指向具体子类的一个实例。不能有抽象构造函数或抽象靜態方法。Abstract 类的子类为它們父类中的所有抽象方法提供实现，否則它們也是抽象类为。取而代之，在子类中实现該方法。知道其行为的其它类可以在类中实现這些方法。<br>接口（interface）是抽象类的变体。在接口中，所有方法都是抽象的。多继承性可通過实现這样的接口而獲得。接口中的所有方法都是抽象的，沒有一个有程序体。接口只可以定義static final成員变量。接口的实现与子类相似，除了該实现类不能從接口定義中继承行为。當类实现特殊接口時，它定義（即將程序体给予）所有這種接口的方法。然後，它可以在实现了該接口的类的任何对象上調用接口的方法。由於有抽象类，它允許使用接口名作为引用变量的类型。通常的動態聯編將生效。引用可以轉換到接口类型或從接口类型轉換，instanceof 运算符可以用來决定某对象的类是否实现了接口。</p>
+<p>第二十一，abstract的method是否可同時是static,是否可同時是native，是否可同時是synchronized?<br>都不能</p>
+<p>第二十二，接口是否可继承接口? 抽象类是否可实现(implements)接口? 抽象类是否可继承实体类(concrete class)?<br>接口可以继承接口。抽象类可以实现(implements)接口，抽象类是否可继承实体类，但前提是实体类必須有明確的构造函数。</p>
+<p>第二十三，启動一个线程是用run()还是start()?<br>启動一个线程是調用start()方法，使线程所代表的虛擬處理機處於可運行狀態，這意味着它可以由JVM調度並執行。這並不意味着线程就會立即運行。run()方法可以产生必須退出的標志來停止一个线程。<br>第二十四，构造器Constructor是否可被override?<br>构造器Constructor不能被继承，因此不能重写Overriding，但可以被重载Overloading。</p>
+<p>第二十五，是否可以继承String类?<br>String类是final类故不可以继承。</p>
+<p>第二十六，當一个线程進入一个对象的一个synchronized方法後，其它线程是否可進入此对象的其它方法?<br>不能，一个对象的一个synchronized方法只能由一个线程訪問。</p>
+<p>第二十七，try {}里有一个return語句，那么緊跟在這个try後的finally {}里的code會不會被執行，什么時候被執行，在return前还是後?<br>會執行，在return前執行。</p>
+<p>第二十八，編程題: 用最有效率的方法算出2乘以8等於幾?<br>有C背景的程序員特別喜歡問這種問題。</p>
+<p>2 &lt;&lt; 3</p>
+<p>第二十九，兩个对象值相同(x.equals(y) == true)，但卻可有不同的hash code，這句話对不对?<br>不对，有相同的hash code。</p>
+<p>第三十，當一个对象被當作参数傳遞到一个方法後，此方法可改变這个对象的属性，並可返回变化後的結果，那么這里到底是值傳遞还是引用傳遞?<br>是值傳遞。Java 編程語言只由值傳遞参数。當一个对象实例作为一个参数被傳遞到方法中時，参数的值就是对該对象的引用。对象的內容可以在被調用的方法中改变，但对象的引用是永遠不會改变的。</p>
+<p>第三十一，swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上?<br>switch（expr1）中，expr1是一个整数表达式。因此傳遞给 switch 和 case 語句的参数應該是 int、 short、 char 或者 byte。long,string 都不能作用於swtich。<br>第三十二，編程題: 写一个Singleton出來。<br>Singleton模式主要作用是保證在Java應用程序中，一个类Class只有一个实例存在。<br>一般Singleton模式通常有幾種種形式:<br>第一種形式: 定義一个类，它的构造函数为private的，它有一个static的private的該类变量，在类初始化時实例話，通過一个public的getInstance方法獲取对它的引用,繼而調用其中的方法。<br>public class Singleton {<br>private Singleton(){}<br>//在自己內部定義自己一个实例，是不是很奇怪？<br>//注意這是private 只供內部調用<br>private static Singleton instance = new Singleton();<br>//這里提供了一个供外部訪問本class的靜態方法，可以直接訪問<br>public static Singleton getInstance() {<br>return instance;<br>}<br>}<br>第二種形式:<br>public class Singleton {<br>private static Singleton instance = null;<br>public static synchronized Singleton getInstance() {<br>//這个方法比上面有所改進，不用每次都進行生成对象，只是第一次<br>//使用時生成实例，提高了效率！<br>if (instance==null)<br>instance＝new Singleton();<br>return instance; }<br>}<br>其他形式:<br>定義一个类，它的构造函数为private的，所有方法为static的。<br>一般認为第一種形式要更加安全些</p>
+<p>第三十三 Hashtable和HashMap<br>Hashtable继承自Dictionary类，而HashMap是Java1.2引進的Map interface的一个实现</p>
+<p>HashMap允許將null作为一个entry的key或者value，而Hashtable不允許</p>
+<p>还有就是，HashMap把Hashtable的contains方法去掉了，改成containsvalue和containsKey。因为contains方法容易讓人引起誤解。</p>
+<p>最大的不同是，Hashtable的方法是Synchronize的，而HashMap不是，在<br>多个线程訪問Hashtable時，不需要自己为它的方法实现同步，而HashMap<br>就必須为之提供外同步。</p>
+<p>Hashtable和HashMap采用的hash/rehash算法都大概一样，所以性能不會有很大的差異。</p>
+<p>//还得看看java数據結构方面的,當然這些都是Java的基本題，那些面試的人大多数不會問你Hibernate有多先進，Eclipse的三个組成部分，或command design pattern，他們都是老一輩了，最喜歡問的就是基礎知識。別小看了這些基礎，还是很重要的.</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java/">Java</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://callmerun.github.io/post/JAVA程式師面試32問（含答案）/" data-title=" JAVA程式師面試32問（含答案） | 陆地行走的鱼" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/post/CentOS服务器初始化设置/" title="CentOS服务器初始化设置">
+  <strong>上一篇：</strong><br/>
+  <span>
+  CentOS服务器初始化设置</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/post/Java面试题/"  title="Java面试题">
+ <strong>下一篇：</strong><br/> 
+ <span>Java面试题
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Blog/" title="Blog">Blog<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>16</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>15</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/工具/" title="工具">工具<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/项目/" title="项目">项目<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/面试/" title="面试">面试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Mr.Run. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016
+		
+		<a href="/about" target="_blank" title="Callmerun">Callmerun</a>
+		
+
+		</p>
+		<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','NqEsrzxhg1oBfYygK5q5','2.0.0');
+</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

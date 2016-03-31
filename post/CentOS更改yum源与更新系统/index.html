@@ -35,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -101,11 +101,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF"><span class="toc-number">1.</span> <span class="toc-text">CentOS更改yum源与更新系统</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS更改yum源与更新系统"><span class="toc-number">1.</span> <span class="toc-text">CentOS更改yum源与更新系统</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF"><a href="#CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF" class="headerlink" title="CentOS更改yum源与更新系统"></a>CentOS更改yum源与更新系统</h1><p>[1] 首先备份/etc/yum.repos.d/CentOS-Base.repo<br>[root@localhost yum.repos.d]#<code>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</code></p>
+		<h1 id="CentOS更改yum源与更新系统"><a href="#CentOS更改yum源与更新系统" class="headerlink" title="CentOS更改yum源与更新系统"></a>CentOS更改yum源与更新系统</h1><p>[1] 首先备份/etc/yum.repos.d/CentOS-Base.repo<br>[root@localhost yum.repos.d]#<code>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</code></p>
 <p>[2] 进入yum源配置文件所在文件夹<br>[root@localhost yum.repos.d]#<code>cd /etc/yum.repos.d/</code></p>
 <p>[3] 下载163的yum源配置文件，放入/etc/yum.repos.d/(操作前请做好相应备份)</p>
 <p>[root@localhost yum.repos.d]#<code>wget http://mirrors.163.com/.help/CentOS6-Base-163.repo</code></p>
@@ -125,7 +125,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/CentOS/">CentOS</a><a href="/tags/Linux/">Linux</a>
+  <span></span> <a href="/tags/Linux/">Linux</a><a href="/tags/CentOS/">CentOS</a>
   </div>
 
 </div>
@@ -157,9 +157,9 @@
 
 
 <div class="next">
-<a href="/post/常见Linux错误/"  title="常见Linux错误">
+<a href="/post/Linux(CentOS6) 调整home 挂载 分区大小/"  title="Linux 如何查看目录的剩余空间大小？">
  <strong>下一篇：</strong><br/> 
- <span>常见Linux错误
+ <span>Linux 如何查看目录的剩余空间大小？
 </span>
 </a>
 </div>
@@ -174,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS_u66F4_u6539yum_u6E90_u4E0E_u66F4_u65B0_u7CFB_u7EDF"><span class="toc-number">1.</span> <span class="toc-text">CentOS更改yum源与更新系统</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS更改yum源与更新系统"><span class="toc-number">1.</span> <span class="toc-text">CentOS更改yum源与更新系统</span></a></li></ol>
  
   </div>
 
@@ -191,19 +191,23 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			<li><a href="/categories/Blog/" title="Blog">Blog<sup>3</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Java/" title="Java">Java<sup>8</sup></a></li>
+			<li><a href="/categories/Java/" title="Java">Java<sup>16</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>5</sup></a></li>
 		  
 		
 		  
 			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -216,23 +220,31 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>7</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>15</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/多线程/" title="多线程">多线程<sup>4</sup></a></li>
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
+				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>2</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/工具/" title="工具">工具<sup>2</sup></a></li>
 			
 		
 			
@@ -240,11 +252,11 @@
 			
 		
 			
-				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+				<li><a href="/tags/项目/" title="项目">项目<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/工具/" title="工具">工具<sup>1</sup></a></li>
+				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
 			
 		
 			
@@ -252,7 +264,11 @@
 			
 		
 			
-				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
 			
 		
 		</ul>

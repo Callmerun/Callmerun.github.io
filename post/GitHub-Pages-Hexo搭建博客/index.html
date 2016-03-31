@@ -21,7 +21,7 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 <meta property="og:description" content="概述这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：GitHub Pages + Hexo搭建博客 
 Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。
 其实，Hexo生成的网站文件中有.">
-<meta property="og:updated_time" content="2016-01-28T06:00:53.357Z">
+<meta property="og:updated_time" content="2016-03-31T02:33:43.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Pages + Hexo搭建博客">
 <meta name="twitter:description" content="概述这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：GitHub Pages + Hexo搭建博客 
@@ -38,7 +38,7 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -104,11 +104,11 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u6982_u8FF0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><span class="toc-number">2.</span> <span class="toc-text">我的博客搭建流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><span class="toc-number">3.</span> <span class="toc-text">我的博客管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u65E5_u5E38_u4FEE_u6539"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.日常修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.本地资料丢失</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><span class="toc-number">4.</span> <span class="toc-text">Markdown文件头格式(即front-matter)：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><span class="toc-number">5.</span> <span class="toc-text">Markdown语法手册：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u53C2_u8003"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的博客搭建流程"><span class="toc-number">2.</span> <span class="toc-text">我的博客搭建流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作："><span class="toc-number">2.1.</span> <span class="toc-text">准备工作：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Git或者Github-for-Windows"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.安装Git或者Github for Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Node-js"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.安装Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正式安装配置"><span class="toc-number">2.2.</span> <span class="toc-text">正式安装配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的博客管理流程"><span class="toc-number">3.</span> <span class="toc-text">我的博客管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-日常修改"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.日常修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-本地资料丢失"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.本地资料丢失</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有关于GitHub分支的一下命令"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">有关于GitHub分支的一下命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo简写命令"><span class="toc-number">3.0.2.2.</span> <span class="toc-text">Hexo简写命令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown文件头格式-即front-matter-："><span class="toc-number">4.</span> <span class="toc-text">Markdown文件头格式(即front-matter)：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在scaffolds文件夹下面的post-md文件设置："><span class="toc-number">4.1.</span> <span class="toc-text">在scaffolds文件夹下面的post.md文件设置：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown语法手册："><span class="toc-number">5.</span> <span class="toc-text">Markdown语法手册：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="u6982_u8FF0"><a href="#u6982_u8FF0" class="headerlink" title="概述"></a>概述</h1><p>这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：<br><a href="http://Callmerun.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub Pages + Hexo搭建博客 </a></p>
+		<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>这是一篇使用GitHub Pages和Hexo搭建免费独立博客的总结。主要摘抄重要的部分，想要看完整详细版的请到出处：<br><a href="http://Callmerun.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub Pages + Hexo搭建博客 </a></p>
 <p>Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，就不可能了（除非你自己写html o(^▽^)o ）。</p>
 <p>其实，Hexo生成的网站文件中有.gitignore文件，因此它的本意也是想我们将Hexo生成的网站文件存放到GitHub上进行管理的（而不是用U盘或者云备份啦(╬▔皿▔)凸）。这样，不仅解决了上述的问题，还可以通过git的版本控制追踪你的博文的修改过程，是极赞的。</p>
 <p>但是，如果每一个GitHub Pages都需要创建一个额外的仓库来存放Hexo网站文件，我感觉很麻烦（10个项目需要20个仓库(ˉ▽ˉ；)…）。</p>
@@ -117,11 +117,24 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 <p>下面以我的博客作为例子详细地讲述。</p>
 <a id="more"></a>
 <hr>
-<h1 id="u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><a href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B" class="headerlink" title="我的博客搭建流程"></a>我的博客搭建流程</h1><blockquote>
+<h1 id="我的博客搭建流程"><a href="#我的博客搭建流程" class="headerlink" title="我的博客搭建流程"></a>我的博客搭建流程</h1><h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><h3 id="1-安装Git或者Github-for-Windows"><a href="#1-安装Git或者Github-for-Windows" class="headerlink" title="1.安装Git或者Github for Windows"></a>1.安装Git或者Github for Windows</h3><p>下载 msysgit或者<a href="https://windows.github.com/" target="_blank" rel="external">Github for Windows</a>并执行即可完成安装。</p>
+<h3 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h3><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></p>
+<p>在 Windows 环境下安装 Node.js 非常简单，仅须下载安装文件并执行即可完成安装。</p>
+<p><code>注意</code> 安装完成后添加Path环境变量，使npm命令生效。新版已经会自动配置Path<br><code>;C:\Program Files\nodejs\node_modules\npm</code></p>
+<h2 id="正式安装配置"><a href="#正式安装配置" class="headerlink" title="正式安装配置"></a>正式安装配置</h2><blockquote>
 <ul>
 <li><p>创建仓库，<code>Callmerun.github.io</code>；</p>
 </li>
 <li><p>创建两个分支：master 与 hexo；</p>
+</li>
+</ul>
+<ul>
+<li><p>在<code>github</code>网站上设置<code>hexo为默认分支</code>（因为我们只需要手动管理这个分支上的Hexo网站文件）；<br><font color="Magenta">当你想要在你的分支上提交内容，请确保是在你的那个分支上。</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在本地新建一个分支： git branch hexo</span><br><span class="line">切换到你的新分支: git checkout hexo</span><br><span class="line">查看当前分支：git branch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>git clone git@github.com:Callmerun/Callmerun.github.io.git</code>拷贝仓库；</p>
+</li>
+<li><p>在<code>git shell</code>或者<code>Git bash</code>上进入<code>本地Callmerun.github.io文件夹</code>下依次执行<br><code>npm install hexo</code><br><code>hexo init</code>（如果是本地资料丢失，这个就不需要执行了）<br><code>npm install</code><br><code>npm install hexo-deployer-git --save</code>（此时当前分支应显示为<code>hexo</code>）;</p>
 </li>
 <li><p>设置<code>hexo为默认分支</code>（因为我们只需要手动管理这个分支上的Hexo网站文件）；</p>
 </li>
@@ -129,7 +142,10 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 </li>
 <li><p>在<code>本地Callmerun.github.io文件夹</code>下通过<code>Git bash</code>依次执行<br><code>npm install hexo</code><br><code>hexo init</code><br><code>npm install</code><br><code>npm install hexo-deployer-git</code>（此时当前分支应显示为<code>hexo</code>）;</p>
 </li>
+</ul>
+<ul>
 <li><p>修改<code>_config.yml</code>中的deploy参数，<code>分支应为master</code>；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Deployment  站点部署到github要配置</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: &quot;update&quot;</span><br><span class="line">  repository: https://github.com/Callmerun/Callmerun.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  #branch: gh-pages</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>依次执行<br><code>git add .</code><br><code>git commit -m “…”</code><br><code>git push origin hexo</code>提交网站相关的文件；</p>
 </li>
@@ -139,7 +155,9 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 </blockquote>
 <p>这样一来，在GitHub上的Callmerun.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美( •̀ ω •́ )y！</p>
 <hr>
-<h1 id="u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><a href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B" class="headerlink" title="我的博客管理流程"></a>我的博客管理流程</h1><h3 id="1-_u65E5_u5E38_u4FEE_u6539"><a href="#1-_u65E5_u5E38_u4FEE_u6539" class="headerlink" title="1.日常修改"></a>1.日常修改</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+<h1 id="我的博客管理流程"><a href="#我的博客管理流程" class="headerlink" title="我的博客管理流程"></a>我的博客管理流程</h1><h3 id="1-日常修改"><a href="#1-日常修改" class="headerlink" title="1.日常修改"></a>1.日常修改</h3><p>在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理：</p>
+<font color="Magenta">当你想要在你的分支上提交内容，请确保是在你的那个分支hexo上。</font>
+
 <blockquote>
 <ul>
 <li>依次执行<br><code>git add .</code><br><code>git commit -m “…”</code><br><code>git push origin hexo</code>指令将改动推送到GitHub（此时当前分支应为<code>hexo</code>）；</li>
@@ -147,18 +165,29 @@ Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html�
 </ul>
 </blockquote>
 <p>虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</p>
-<h3 id="2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><a href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931" class="headerlink" title="2.本地资料丢失"></a>2.本地资料丢失</h3><p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<h3 id="2-本地资料丢失"><a href="#2-本地资料丢失" class="headerlink" title="2.本地资料丢失"></a>2.本地资料丢失</h3><p><font color="Red">重装前先从GitHub上下载备份好资料，重要是事说三遍！！！！！</font><br>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
 <blockquote>
 <ul>
-<li><p>使用<code>git clone git@github.com:Callmerun/Callmerun.github.io.git</code>拷贝仓库（默认分支为<code>hexo</code>）；</p>
+<li><p>使用<code>git clone git@github.com:Callmerun/Callmerun.github.io.git</code>拷贝仓库（<font color="Red">默认分支为<code>hexo</code>，重要的事说三遍！！！！！！！</font>）；<br>或者是从云盘下载下来，最重要的是要保持配置要一致，如_config.yml、主题文件配置、_post文件夹下的文章文件</p>
 </li>
-<li><p>在本地新拷贝的Callmerun.github.io文件夹下通过Git bash依次执行下列指令：<br><code>npm install hexo</code><br><code>npm install</code><br><code>npm install hexo-deployer-git</code>（记得，不需要hexo init这条指令）。</p>
+<li><p>显示样式：<strong><em><font color="Red">D:\快盘\GitHub\Callmerun.github.io [hexo +21 ~0 -0 !]&gt;</font></em></strong></p>
 </li>
 </ul>
 </blockquote>
+<p>当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
+<blockquote>
+<ul>
+<li>使用<code>git clone git@github.com:Callmerun/Callmerun.github.io.git</code>拷贝仓库（<font color="Red">默认分支为<code>hexo</code></font>）；</li>
+</ul>
+<ul>
+<li>在<font color="Magenta">本地新拷贝的Callmerun.github.io文件夹</font>下通过Git bash依次执行下列指令：<br><code>npm install hexo</code><br><code>npm install</code><br><code>npm install hexo-deployer-git --save</code>（特别注意记得，<code>不需要hexo init</code>这条指令，重要的事说三遍！！！！！！）。</li>
+</ul>
+</blockquote>
+<h4 id="有关于GitHub分支的一下命令"><a href="#有关于GitHub分支的一下命令" class="headerlink" title="有关于GitHub分支的一下命令"></a>有关于GitHub分支的一下命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在本地新建一个分支： git branch hexo</span><br><span class="line">切换到你的新分支: git checkout hexo</span><br><span class="line">将新分支发布在github上： git push origin hexo</span><br><span class="line">在本地删除一个分支： git branch -d hexo</span><br><span class="line">在github远程端删除一个分支： git push origin :hexo   (分支名前的冒号代表删除)</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><a href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A" class="headerlink" title="Markdown文件头格式(即front-matter)："></a>Markdown文件头格式(即<code>front-matter</code>)：</h1><pre><code>---
-title: GitHub Pages + Hexo搭建博客
+<h4 id="Hexo简写命令"><a href="#Hexo简写命令" class="headerlink" title="Hexo简写命令"></a>Hexo简写命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n #生成文章，或者source\_posts手动编辑</span><br><span class="line">hexo s #本地发布预览效果</span><br><span class="line">hexo g #生成public静态文件</span><br><span class="line">最后我选择手动同步更新至GitHub</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Markdown文件头格式-即front-matter-："><a href="#Markdown文件头格式-即front-matter-：" class="headerlink" title="Markdown文件头格式(即front-matter)："></a>Markdown文件头格式(即<code>front-matter</code>)：</h1><h2 id="在scaffolds文件夹下面的post-md文件设置："><a href="#在scaffolds文件夹下面的post-md文件设置：" class="headerlink" title="在scaffolds文件夹下面的post.md文件设置："></a>在scaffolds文件夹下面的post.md文件设置：</h2><pre><code>title: GitHub Pages + Hexo搭建博客
 date: 2016-01-26 09:33:39
 categories: Blog
 tags:
@@ -174,8 +203,8 @@ tags:
 <li>另每篇文章的 <code>front-matter</code> 也要注意这个问题。</li>
 </ul>
 </blockquote>
-<h1 id="Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><a href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A" class="headerlink" title="Markdown语法手册："></a>Markdown语法手册：</h1><p><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Cmd Markdown 简明语法手册 作业部落</a><br><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-%E9%AB%98%E9%98%B6%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C" target="_blank" rel="external">Cmd Markdown 高阶语法手册 作业部落</a></p>
-<h1 id="u53C2_u8003"><a href="#u53C2_u8003" class="headerlink" title="参考"></a>参考</h1><p><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">hexo系列教程：（三）hexo博客的配置、使用</a><br><a href="http://wuchong.me/blog/2014/01/17/use-github-to-manage-hexo-source/" target="_blank" rel="external">使用GitHub来管理博客源文件 </a></p>
+<h1 id="Markdown语法手册："><a href="#Markdown语法手册：" class="headerlink" title="Markdown语法手册："></a>Markdown语法手册：</h1><p><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Cmd Markdown 简明语法手册 作业部落</a><br><a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-%E9%AB%98%E9%98%B6%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C" target="_blank" rel="external">Cmd Markdown 高阶语法手册 作业部落</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="external">hexo系列教程：（三）hexo博客的配置、使用</a><br><a href="http://wuchong.me/blog/2014/01/17/use-github-to-manage-hexo-source/" target="_blank" rel="external">使用GitHub来管理博客源文件 </a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -221,9 +250,9 @@ tags:
 
 
 <div class="next">
-<a href="/post/hello-world/"  title="Hello World">
+<a href="/post/Java-泛型/"  title="Java 泛型">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>Java 泛型
 </span>
 </a>
 </div>
@@ -238,7 +267,7 @@ tags:
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u6982_u8FF0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u642D_u5EFA_u6D41_u7A0B"><span class="toc-number">2.</span> <span class="toc-text">我的博客搭建流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u6211_u7684_u535A_u5BA2_u7BA1_u7406_u6D41_u7A0B"><span class="toc-number">3.</span> <span class="toc-text">我的博客管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_u65E5_u5E38_u4FEE_u6539"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.日常修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_u672C_u5730_u8D44_u6599_u4E22_u5931"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.本地资料丢失</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u6587_u4EF6_u5934_u683C_u5F0F_28_u5373front-matter_29_uFF1A"><span class="toc-number">4.</span> <span class="toc-text">Markdown文件头格式(即front-matter)：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown_u8BED_u6CD5_u624B_u518C_uFF1A"><span class="toc-number">5.</span> <span class="toc-text">Markdown语法手册：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u53C2_u8003"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的博客搭建流程"><span class="toc-number">2.</span> <span class="toc-text">我的博客搭建流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作："><span class="toc-number">2.1.</span> <span class="toc-text">准备工作：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Git或者Github-for-Windows"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.安装Git或者Github for Windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Node-js"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.安装Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正式安装配置"><span class="toc-number">2.2.</span> <span class="toc-text">正式安装配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的博客管理流程"><span class="toc-number">3.</span> <span class="toc-text">我的博客管理流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-日常修改"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.日常修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-本地资料丢失"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.本地资料丢失</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有关于GitHub分支的一下命令"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">有关于GitHub分支的一下命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo简写命令"><span class="toc-number">3.0.2.2.</span> <span class="toc-text">Hexo简写命令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown文件头格式-即front-matter-："><span class="toc-number">4.</span> <span class="toc-text">Markdown文件头格式(即front-matter)：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在scaffolds文件夹下面的post-md文件设置："><span class="toc-number">4.1.</span> <span class="toc-text">在scaffolds文件夹下面的post.md文件设置：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown语法手册："><span class="toc-number">5.</span> <span class="toc-text">Markdown语法手册：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
  
   </div>
 
@@ -255,19 +284,23 @@ tags:
 		<ul>
 		
 		  
-			<li><a href="/categories/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			<li><a href="/categories/Blog/" title="Blog">Blog<sup>3</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Java/" title="Java">Java<sup>8</sup></a></li>
+			<li><a href="/categories/Java/" title="Java">Java<sup>16</sup></a></li>
 		  
 		
 		  
-			<li><a href="/categories/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>5</sup></a></li>
 		  
 		
 		  
 			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -280,23 +313,31 @@ tags:
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>7</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>15</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/多线程/" title="多线程">多线程<sup>4</sup></a></li>
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>3</sup></a></li>
+				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>2</sup></a></li>
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/工具/" title="工具">工具<sup>2</sup></a></li>
 			
 		
 			
@@ -304,11 +345,11 @@ tags:
 			
 		
 			
-				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+				<li><a href="/tags/项目/" title="项目">项目<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/工具/" title="工具">工具<sup>1</sup></a></li>
+				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
 			
 		
 			
@@ -316,7 +357,11 @@ tags:
 			
 		
 			
-				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>1</sup></a></li>
+				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
 			
 		
 		</ul>

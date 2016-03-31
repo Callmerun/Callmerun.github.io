@@ -1,0 +1,539 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>重新配置GitHub + Hexo | 陆地行走的鱼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Callmerun">
+    
+
+    
+    <meta name="description" content="Hexo出现错误：切换分支失败12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重新配置GitHub + Hexo">
+<meta property="og:url" content="http://callmerun.github.io/post/重新配置GitHub-Hexo/index.html">
+<meta property="og:site_name" content="陆地行走的鱼">
+<meta property="og:description" content="Hexo出现错误：切换分支失败12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+<meta property="og:updated_time" content="2016-03-31T02:40:56.584Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重新配置GitHub + Hexo">
+<meta name="twitter:description" content="Hexo出现错误：切换分支失败12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697">
+
+    
+    <link rel="alternative" href="/atom.xml" title="陆地行走的鱼" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="陆地行走的鱼" title="陆地行走的鱼"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="陆地行走的鱼">陆地行走的鱼</a></h1>
+				<h2 class="blog-motto">爱编程，爱生活，不羁放纵爱自由</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/index">索引 | Index</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+				</ul>
+			</nav>
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/重新配置GitHub-Hexo/" title="重新配置GitHub + Hexo" itemprop="url">重新配置GitHub + Hexo</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Callmerun" target="_blank" itemprop="author">Callmerun</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-31T02:38:56.000Z" itemprop="datePublished"> 发表于 2016-03-31</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>Hexo出现错误：切换分支失败<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line">D:\快盘\GitHub\Callmerun.github.io [master +21 ~0 -0 !]&gt;  git checkout hexo</span><br><span class="line">error: The following untracked working tree files would be overwritten by checko</span><br><span class="line">ut:</span><br><span class="line">        .gitignore</span><br><span class="line">        .npmignore</span><br><span class="line">        README.md</span><br><span class="line">        _config.yml</span><br><span class="line">        about/index.html</span><br><span class="line">        archives/2015/01/index.html</span><br><span class="line">        archives/2015/index.html</span><br><span class="line">        archives/2016/01/index.html</span><br><span class="line">        archives/2016/index.html</span><br><span class="line">        archives/index.html</span><br><span class="line">        atom.xml</span><br><span class="line">        categories/blog/index.html</span><br><span class="line">        css/style.css</span><br><span class="line">        fancybox/blank.gif</span><br><span class="line">        fancybox/fancybox_loading.gif</span><br><span class="line">        fancybox/fancybox_loading@2x.gif</span><br><span class="line">        fancybox/fancybox_overlay.png</span><br><span class="line">        fancybox/fancybox_sprite.png</span><br><span class="line">        fancybox/fancybox_sprite@2x.png</span><br><span class="line">        fancybox/helpers/fancybox_buttons.png</span><br><span class="line">        fancybox/helpers/jquery.fancybox-buttons.css</span><br><span class="line">        fancybox/helpers/jquery.fancybox-buttons.js</span><br><span class="line">        fancybox/helpers/jquery.fancybox-media.js</span><br><span class="line">        fancybox/helpers/jquery.fancybox-thumbs.css</span><br><span class="line">        fancybox/helpers/jquery.fancybox-thumbs.js</span><br><span class="line">        fancybox/jquery.fancybox.css</span><br><span class="line">        fancybox/jquery.fancybox.js</span><br><span class="line">        fancybox/jquery.fancybox.pack.js</span><br><span class="line">        font/FontAwesome.otf</span><br><span class="line">        font/coveredbyyourgrace-webfont.eot</span><br><span class="line">        font/coveredbyyourgrace-webfont.svg</span><br><span class="line">        font/coveredbyyourgrace-webfont.ttf</span><br><span class="line">        font/coveredbyyourgrace-webfont.woff</span><br><span class="line">        font/fontawesome-webfont.eot</span><br><span class="line">        font/fontawesome-webfont.svg</span><br><span class="line">        font/fontawesome-webfont.ttf</span><br><span class="line">        font/fontawesome-webfont.woff</span><br><span class="line">        font/fontdiao.eot</span><br><span class="line">        font/fontdiao.svg</span><br><span class="line">        font/fontdiao.ttf</span><br><span class="line">        font/fontdiao.woff</span><br><span class="line">        img/author.jpg</span><br><span class="line">        img/author.png</span><br><span class="line">        img/banner.jpg</span><br><span class="line">        img/cc-by-nc-nd.svg</span><br><span class="line">        img/cc-by-nc-sa.svg</span><br><span class="line">        img/cc-by-nc.svg</span><br><span class="line">        img/cc-by-nd.svg</span><br><span class="line">        img/cc-by-sa.svg</span><br><span class="line">        img/cc-by.svg</span><br><span class="line">        img/cc-zero.svg</span><br><span class="line">        img/favicon.ico</span><br><span class="line">        img/jacman.jpg</span><br><span class="line">        img/logo.png</span><br><span class="line">        img/logo.svg</span><br><span class="line">        img/scrollup.png</span><br><span class="line">        index.html</span><br><span class="line">        js/gallery.js</span><br><span class="line">        js/jquery-2.0.3.min.js</span><br><span class="line">        js/jquery.imagesloaded.min.js</span><br><span class="line">        js/jquery.qrcode-0.12.0.min.js</span><br><span class="line">        js/totop.js</span><br><span class="line">        package.json</span><br><span class="line">        post/Java-泛型/index.html</span><br><span class="line">        post/关于Java多线程的一些知识补充/index.html</span><br><span class="line">        post/第一篇文章/index.html</span><br><span class="line">        scaffolds/draft.md</span><br><span class="line">        scaffolds/page.md</span><br><span class="line">        scaffolds/post.md</span><br><span class="line">        sitemap.xml</span><br><span class="line">        source/_posts/Atom软件的一些使用纪要.md</span><br><span class="line">        source/_posts/CentOS一些常用命令.md</span><br><span class="line">        source/_posts/CentOS更改yum源与更新系统.md</span><br><span class="line">        source/_posts/CentOS服务器初始化设置.md</span><br><span class="line">        source/_posts/GitHub-Pages-Hexo搭建博客.md</span><br><span class="line">        source/_posts/Hexo具体配置参考.md</span><br><span class="line">        source/_posts/JAVA程式師面試32問（含答案）.md</span><br><span class="line">        source/_posts/Java-Thread-join-详解.md</span><br><span class="line">        source/_posts/Java-小项目（待写）.md</span><br><span class="line">        source/_posts/Java-泛型.md</span><br><span class="line">        source/_posts/Java中用双缓冲技术消除闪烁.md</span><br><span class="line">        source/_posts/Java学习-持有对方引用.md</span><br><span class="line">        source/_posts/Java练手小項目.md</span><br><span class="line">        source/_posts/Java面试题.md</span><br><span class="line">        source/_posts/Linux(CentOS6) 调整home 挂载 分区大小.md</span><br><span class="line">        source/_posts/String参数传递问题.md</span><br><span class="line">        source/_posts/eclipse最有用快捷键整理.md</span><br><span class="line">        source/_posts/hello-world.md</span><br><span class="line">        source/_posts/windows下的一些实用批处理.md</span><br><span class="line">        source/_posts/关于Java多线程的一些知识补充.md</span><br><span class="line">        source/_posts/利用swiftype为hexo添加站内搜索.md</span><br><span class="line">        source/_posts/单例模式.md</span><br><span class="line">        source/_posts/常见Linux错误.md</span><br><span class="line">        source/_posts/简单Java-Socket聊天室.md</span><br><span class="line">        source/_posts/简单网络爬虫-以及Email正则表达式.md</span><br><span class="line">        source/_posts/转-循序渐进Java-Socket网络编程（多客户端、信息共享、文件传</span><br><span class="line">输）.md</span><br><span class="line">        source/about/index.md</span><br><span class="line">        source/search/index.md</span><br><span class="line">        tags/Java/index.html</span><br><span class="line">        tags/博客/index.html</span><br><span class="line">        tags/多线程/index.html</span><br><span class="line">        tags/文章/index.html</span><br><span class="line">        themes/landscape/.npmignore</span><br><span class="line">        themes/landscape/Gruntfile.js</span><br><span class="line">        themes/landscape/LICENSE</span><br><span class="line">        themes/landscape/README.md</span><br><span class="line">        themes/landscape/_config.yml</span><br><span class="line">        themes/landscape/languages/default.yml</span><br><span class="line">        themes/landscape/languages/nl.yml</span><br><span class="line">        themes/landscape/languages/no.yml</span><br><span class="line">        themes/landscape/languages/ru.yml</span><br><span class="line">        themes/landscape/languages/zh-CN.yml</span><br><span class="line">        themes/landscape/languages/zh-TW.yml</span><br><span class="line">        themes/landscape/layout/_partial/after-footer.ejs</span><br><span class="line">        themes/landscape/layout/_partial/archive-post.ejs</span><br><span class="line">        themes/landscape/layout/_partial/archive.ejs</span><br><span class="line">        themes/landscape/layout/_partial/article.ejs</span><br><span class="line">        themes/landscape/layout/_partial/footer.ejs</span><br><span class="line">        themes/landscape/layout/_partial/google-analytics.ejs</span><br><span class="line">        themes/landscape/layout/_partial/head.ejs</span><br><span class="line">        themes/landscape/layout/_partial/header.ejs</span><br><span class="line">        themes/landscape/layout/_partial/mobile-nav.ejs</span><br><span class="line">        themes/landscape/layout/_partial/post/category.ejs</span><br><span class="line">        themes/landscape/layout/_partial/post/date.ejs</span><br><span class="line">        themes/landscape/layout/_partial/post/gallery.ejs</span><br><span class="line">        themes/landscape/layout/_partial/post/nav.ejs</span><br><span class="line">        themes/landscape/layout/_partial/post/tag.ejs</span><br><span class="line">        themes/landscape/layout/_partial/post/title.ejs</span><br><span class="line">        themes/landscape/layout/_partial/sidebar.ejs</span><br><span class="line">        themes/landscape/layout/_widget/archive.ejs</span><br><span class="line">        themes/landscape/layout/_widget/category.ejs</span><br><span class="line">        themes/landscape/layout/_widget/recent_posts.ejs</span><br><span class="line">        themes/landscape/layout/_widget/tag.ejs</span><br><span class="line">        themes/landscape/layout/_widget/tagcloud.ejs</span><br><span class="line">        themes/landscape/layout/archive.ejs</span><br><span class="line">        themes/landscape/layout/category.ejs</span><br><span class="line">        themes/landscape/layout/index.ejs</span><br><span class="line">        themes/landscape/layout/layout.ejs</span><br><span class="line">        themes/landscape/layout/page.ejs</span><br><span class="line">        themes/landscape/layout/post.ejs</span><br><span class="line">        themes/landscape/layout/tag.ejs</span><br><span class="line">        themes/landscape/package.json</span><br><span class="line">        themes/landscape/scripts/fancybox.js</span><br><span class="line">        themes/landscape/source/css/_extend.styl</span><br><span class="line">        themes/landscape/source/css/_partial/archive.styl</span><br><span class="line">        themes/landscape/source/css/_partial/article.styl</span><br><span class="line">        themes/landscape/source/css/_partial/comment.styl</span><br><span class="line">        themes/landscape/source/css/_partial/footer.styl</span><br><span class="line">        themes/landscape/source/css/_partial/header.styl</span><br><span class="line">        themes/landscape/source/css/_partial/highlight.styl</span><br><span class="line">        themes/landscape/source/css/_partial/mobile.styl</span><br><span class="line">        themes/landscape/source/css/_partial/sidebar-aside.styl</span><br><span class="line">        themes/landscape/source/css/_partial/sidebar-bottom.styl</span><br><span class="line">        themes/landscape/source/css/_partial/sidebar.styl</span><br><span class="line">        themes/landscape/source/css/_util/grid.styl</span><br><span class="line">        themes/landscape/source/css/_util/mixin.styl</span><br><span class="line">        themes/landscape/source/css/_variables.styl</span><br><span class="line">        themes/landscape/source/css/fonts/FontAwesome.otf</span><br><span class="line">        themes/landscape/source/css/fonts/fontawesome-webfont.eot</span><br><span class="line">        themes/landscape/source/css/fonts/fontawesome-webfont.svg</span><br><span class="line">        themes/landscape/source/css/fonts/fontawesome-webfont.ttf</span><br><span class="line">        themes/landscape/source/css/fonts/fontawesome-webfont.woff</span><br><span class="line">        themes/landscape/source/css/images/banner.jpg</span><br><span class="line">        themes/landscape/source/css/style.styl</span><br><span class="line">        themes/landscape/source/fancybox/blank.gif</span><br><span class="line">        themes/landscape/source/fancybox/fancybox_loading.gif</span><br><span class="line">        themes/landscape/source/fancybox/fancybox_loading@2x.gif</span><br><span class="line">        themes/landscape/source/fancybox/fancybox_overlay.png</span><br><span class="line">        themes/landscape/source/fancybox/fancybox_sprite.png</span><br><span class="line">        themes/landscape/source/fancybox/fancybox_sprite@2x.png</span><br><span class="line">        themes/landscape/source/fancybox/helpers/fancybox_buttons.png</span><br><span class="line">        themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.css</span><br><span class="line">        themes/landscape/source/fancybox/helpers/jquery.fancybox-buttons.js</span><br><span class="line">        themes/landscape/source/fancybox/helpers/jquery.fancybox-media.js</span><br><span class="line">        themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.css</span><br><span class="line">        themes/landscape/source/fancybox/helpers/jquery.fancybox-thumbs.js</span><br><span class="line">        themes/landscape/source/fancybox/jquery.fancybox.css</span><br><span class="line">        themes/landscape/source/fancybox/jquery.fancybox.js</span><br><span class="line">        themes/landscape/source/fancybox/jquery.fancybox.pack.js</span><br><span class="line">        themes/landscape/source/js/script.js</span><br><span class="line">Please move or remove them before you can switch branches.</span><br><span class="line">Aborting</span><br><span class="line"></span><br><span class="line">Warning: Your console font probably doesn&apos;t support Unicode. If you experience s</span><br><span class="line">trange characters in the output, consider switching to a TrueType font such as C</span><br><span class="line">onsolas!</span><br></pre></td></tr></table></figure></p>
+<p>解决方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">D:\快盘\GitHub\Callmerun.github.io [master +21 ~0 -0 !]&gt;  git branch -D hexo</span><br><span class="line">Deleted branch hexo (was be8f8c5).</span><br><span class="line">D:\快盘\GitHub\Callmerun.github.io [master +21 ~0 -0 !]&gt; git status</span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        .gitignore</span><br><span class="line">        .npmignore</span><br><span class="line">        README.md</span><br><span class="line">        _config.yml</span><br><span class="line">        about/</span><br><span class="line">        archives/</span><br><span class="line">        atom.xml</span><br><span class="line">        categories/</span><br><span class="line">        css/</span><br><span class="line">        fancybox/</span><br><span class="line">        font/</span><br><span class="line">        img/</span><br><span class="line">        index.html</span><br><span class="line">        js/</span><br><span class="line">        package.json</span><br><span class="line">        post/</span><br><span class="line">        scaffolds/</span><br><span class="line">        sitemap.xml</span><br><span class="line">        source/</span><br><span class="line">        tags/</span><br><span class="line">        themes/</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br><span class="line">D:\快盘\GitHub\Callmerun.github.io [master +21 ~0 -0 !]&gt; git branch</span><br><span class="line">* master</span><br><span class="line">D:\快盘\GitHub\Callmerun.github.io [master +21 ~0 -0 !]&gt; git branch hexo</span><br><span class="line">D:\快盘\GitHub\Callmerun.github.io [master +21 ~0 -0 !]&gt; git checkout hexo</span><br><span class="line">Switched to branch &apos;hexo&apos;</span><br><span class="line">D:\快盘\GitHub\Callmerun.github.io [hexo +21 ~0 -0 !]&gt; dir</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    目录: D:\快盘\GitHub\Callmerun.github.io</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Mode                LastWriteTime     Length Name</span><br><span class="line">----                -------------     ------ ----</span><br><span class="line">d----         2016/3/31      9:28            .deploy_git</span><br><span class="line">d----         2016/3/31      9:28            about</span><br><span class="line">d----         2016/3/31      9:28            archives</span><br><span class="line">d----         2016/3/31      9:28            categories</span><br><span class="line">d----         2016/3/31      9:28            css</span><br><span class="line">d----         2016/3/31      9:28            fancybox</span><br><span class="line">d----         2016/3/31      9:28            font</span><br><span class="line">d----         2016/3/31      9:28            img</span><br><span class="line">d----         2016/3/31      9:28            js</span><br><span class="line">d----         2016/3/31      9:28            node_modules</span><br><span class="line">d----         2016/3/31      9:28            post</span><br><span class="line">d----         2016/3/31      9:28            public</span><br><span class="line">d----         2016/3/31      9:28            scaffolds</span><br><span class="line">d----         2016/3/31      9:28            source</span><br><span class="line">d----         2016/3/31      9:28            tags</span><br><span class="line">d----         2016/3/31      9:28            themes</span><br><span class="line">-a---          2016/3/2     16:06        395 .gitattributes</span><br><span class="line">-a---         2016/1/25     17:55         65 .gitignore</span><br><span class="line">-a---          2016/3/2     15:46         65 .npmignore</span><br><span class="line">-a---         2016/1/25     17:16       8060 atom.xml</span><br><span class="line">-a---          2016/3/2     15:46        174 db.json</span><br><span class="line">-a---         2016/1/25     17:16      15758 index.html</span><br><span class="line">-a---          2016/3/2     15:46        442 package.json</span><br><span class="line">-a---         2016/1/25     14:39        354 README.md</span><br><span class="line">-a---         2016/1/25     17:16        770 sitemap.xml</span><br><span class="line">-a---          2016/3/2     15:46       1483 _config.yml</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">D:\快盘\GitHub\Callmerun.github.io [hexo +21 ~0 -0 !]&gt;</span><br></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Blog/">Blog</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/GitHub/">GitHub</a><a href="/tags/Hexo/">Hexo</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://callmerun.github.io/post/重新配置GitHub-Hexo/" data-title="重新配置GitHub + Hexo | 陆地行走的鱼" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/post/Java中用双缓冲技术消除闪烁/"  title="Java中用双缓冲技术消除闪烁">
+ <strong>下一篇：</strong><br/> 
+ <span>Java中用双缓冲技术消除闪烁
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Blog/" title="Blog">Blog<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>16</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>15</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/工具/" title="工具">工具<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/项目/" title="项目">项目<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/面试/" title="面试">面试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Mr.Run. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016
+		
+		<a href="/about" target="_blank" title="Callmerun">Callmerun</a>
+		
+
+		</p>
+		<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','NqEsrzxhg1oBfYygK5q5','2.0.0');
+</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

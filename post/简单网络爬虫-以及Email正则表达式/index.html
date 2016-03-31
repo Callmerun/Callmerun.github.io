@@ -1,0 +1,556 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>简单网络爬虫 以及Email正则表达式 | 陆地行走的鱼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Callmerun">
+    
+
+    
+    <meta name="description" content="需求：一个很简单的网络爬虫，把指定页面上的邮箱地址爬下来,过滤后符合规则的邮箱地址保存到一个指定TXT文件中
+Java源码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单网络爬虫 以及Email正则表达式">
+<meta property="og:url" content="http://callmerun.github.io/post/简单网络爬虫-以及Email正则表达式/index.html">
+<meta property="og:site_name" content="陆地行走的鱼">
+<meta property="og:description" content="需求：一个很简单的网络爬虫，把指定页面上的邮箱地址爬下来,过滤后符合规则的邮箱地址保存到一个指定TXT文件中
+Java源码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374">
+<meta property="og:updated_time" content="2016-03-15T05:07:43.348Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单网络爬虫 以及Email正则表达式">
+<meta name="twitter:description" content="需求：一个很简单的网络爬虫，把指定页面上的邮箱地址爬下来,过滤后符合规则的邮箱地址保存到一个指定TXT文件中
+Java源码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374">
+
+    
+    <link rel="alternative" href="/atom.xml" title="陆地行走的鱼" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="陆地行走的鱼" title="陆地行走的鱼"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="陆地行走的鱼">陆地行走的鱼</a></h1>
+				<h2 class="blog-motto">爱编程，爱生活，不羁放纵爱自由</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页 | Home</a></li>
+					
+						<li><a href="/index">索引 | Index</a></li>
+					
+						<li><a href="/archives">归档 | Archives</a></li>
+					
+						<li><a href="/about">简介 | About</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+				</ul>
+			</nav>
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/简单网络爬虫-以及Email正则表达式/" title="简单网络爬虫 以及Email正则表达式" itemprop="url">简单网络爬虫 以及Email正则表达式</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Callmerun" target="_blank" itemprop="author">Callmerun</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-15T02:52:35.000Z" itemprop="datePublished"> 发表于 2016-03-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java源码"><span class="toc-number">1.</span> <span class="toc-text">Java源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结果"><span class="toc-number">2.</span> <span class="toc-text">结果</span></a></li></ol>
+		
+		</div>
+		
+		<p><strong>需求：一个很简单的网络爬虫，把指定页面上的邮箱地址爬下来,过滤后符合规则的邮箱地址保存到一个指定TXT文件中</strong></p>
+<h1 id="Java源码"><a href="#Java源码" class="headerlink" title="Java源码"></a>Java源码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> IO;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"><span class="keyword">import</span> java.net.MalformedURLException;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> java.net.URLConnection;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Robot</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * <span class="doctag">@param</span> args</span><br><span class="line">     *    简单的网络爬虫</span><br><span class="line">     *</span><br><span class="line">     *    抓取指定网页里面所有的邮箱地址</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        <span class="comment">//String url = "https://www.douban.com/group/topic/24022171/";</span></span><br><span class="line">        String url = <span class="string">"http://blog.sina.com.cn/s/blog_515617e60101e151.html"</span>;</span><br><span class="line">        String filename = <span class="string">"D://result.txt"</span>;</span><br><span class="line">        method(url, filename);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(String url_str, String writetofile)</span> </span>&#123;</span><br><span class="line">        BufferedReader in = <span class="keyword">null</span>;</span><br><span class="line">        BufferedWriter out = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            URL url = <span class="keyword">new</span> URL(url_str);</span><br><span class="line">            URLConnection conn = url.openConnection();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 匹配email的正则</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// String regex = "\\w+@\\w+\\.\\w*";</span></span><br><span class="line">            <span class="comment">// String regex ="^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";</span></span><br><span class="line">            <span class="comment">// String check ="^([a-z0-9A-Z]+[-|_|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]&#123;2,&#125;$";</span></span><br><span class="line">            <span class="comment">// String check ="^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]&#123;2,&#125;$";</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// String regex ="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]&#123;2,&#125;";//与下面的一句同样的效果</span></span><br><span class="line">            <span class="comment">// String regex = "[a-zA-Z0-9_-]+(\\.\\w+)*@\\w+\\.[a-z]+(\\.[a-z]+)*"; //</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 特别注意：</span></span><br><span class="line">            <span class="comment">// ^   行的开头</span></span><br><span class="line">            <span class="comment">// $   行的结尾</span></span><br><span class="line">            <span class="comment">// 所以要去掉这两个都要去掉</span></span><br><span class="line">            <span class="comment">// String regex =</span></span><br><span class="line">            <span class="comment">// "^[a-zA-Z0-9]([a-zA-Z0-9]|_+[a-zA-Z0-9]|[a-zA-Z0-9]*\\.[a-zA-Z0-9])+@\\w+\\.[a-zA-Z]&#123;1,4&#125;\\.&#123;0,1&#125;[a-zA-Z]&#123;0,4&#125;$";</span></span><br><span class="line">            String regex =</span><br><span class="line">            <span class="string">"[a-zA-Z0-9]([a-zA-Z0-9]|_+[a-zA-Z0-9]|[a-zA-Z0-9]*\\.[a-zA-Z0-9])+@\\w+\\.[a-zA-Z]&#123;1,4&#125;\\.&#123;0,1&#125;[a-zA-Z]&#123;0,4&#125;"</span>;</span><br><span class="line">            <span class="comment">//上面的正则表达式的来源请看[正则表达式匹配邮箱账号](http://blog.csdn.net/c860_zy/article/details/9257011)</span></span><br><span class="line"></span><br><span class="line">            in = <span class="keyword">new</span> BufferedReader(</span><br><span class="line">                    <span class="keyword">new</span> InputStreamReader(conn.getInputStream()));</span><br><span class="line">            out = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(writetofile));</span><br><span class="line"></span><br><span class="line">            String len;</span><br><span class="line">            <span class="keyword">while</span> ((len = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 正则对象，过滤内容</span></span><br><span class="line">                Pattern p = Pattern.compile(regex);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//匹配器对象</span></span><br><span class="line">                Matcher m = p.matcher(len);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//这里不能用if语句，思考</span></span><br><span class="line">                <span class="keyword">while</span> (m.find()) &#123;</span><br><span class="line">                    out.write(m.group());</span><br><span class="line">                    out.newLine();</span><br><span class="line">                    out.flush();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (in != <span class="keyword">null</span>)</span><br><span class="line">                    in.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (out != <span class="keyword">null</span>)</span><br><span class="line">                    out.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意事件：上面的正则表达式的来源请看<a href="http://blog.csdn.net/c860_zy/article/details/9257011" target="_blank" rel="external">正则表达式匹配邮箱账号</a></p>
+</blockquote>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>结果中的邮箱地址有一些<code>zhangshna.Mr@163.com,abc_Wang.dd@sian.com,abc_Wang.dd.cc@sian.com</code>这种类似的形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">530180782@qq.com</span><br><span class="line">243678025@qq.com</span><br><span class="line">......省略一部分结果</span><br><span class="line">xingfa@xingfayeya.com</span><br><span class="line">cjwlj@21cn.com</span><br><span class="line">toocle01@netsun.com</span><br><span class="line">chuangling@chuangling.net</span><br><span class="line">zjykrc@163.com</span><br><span class="line">hahdjx@163.com</span><br><span class="line">5663@sohu.com</span><br><span class="line">chenql_008@163.com</span><br><span class="line">tsmoql@alibaba.com.cn</span><br><span class="line">wxweijie@163.com</span><br><span class="line">jinganmotor@jinganmotor.cn</span><br><span class="line">cnjiangtai@126.com</span><br><span class="line">ankson@126.com</span><br><span class="line">newsinda@yahoo.com</span><br><span class="line">jwf110@hotmail.com</span><br><span class="line">jsob@jsob.cn</span><br><span class="line">shfmsr@hotmail.com</span><br><span class="line">LYC@hzlasiji.com</span><br><span class="line">yawei@xinyajx.com</span><br><span class="line">......省略一部分结果</span><br><span class="line">sanjiangjx@alibaba.com.cn</span><br><span class="line">mr.zhang.yao@163.com  特殊格式</span><br><span class="line">xxtljx@126.com</span><br><span class="line">mxjm@mxjm.com</span><br><span class="line">bbxindas@sohu.com.cc</span><br><span class="line">lvjuntx@qszt.net</span><br><span class="line">wcdb@wcdb.com.cn</span><br><span class="line">......省略一部分结果</span><br><span class="line">tanhua977@sohu.com</span><br><span class="line">nianfashaiwang@163.com</span><br><span class="line">tz_cxh@sohu.com  特殊格式</span><br><span class="line">2008103102@123.com</span><br><span class="line">whcx258@sohu.com</span><br><span class="line">wzlmv67997728@126.com</span><br><span class="line">xin.fa168@163.com  特殊格式</span><br><span class="line">baoxiuyu@yahoo.cn</span><br><span class="line">wcf@xinda.js.cn</span><br><span class="line">hongfu@wjhongfu.cn</span><br><span class="line">xiejinhua29@yahoo.com.cn</span><br><span class="line">hzsongchengmachine@126.com</span><br><span class="line">zhangqiaoqiao0731@gmail.com</span><br><span class="line">cuioyou@163.com</span><br><span class="line">hbt@hbt.cn</span><br><span class="line">kaixuankite@sohu.com</span><br><span class="line">beigongpump@qq.com</span><br><span class="line">juwp@wpdj.com</span><br><span class="line">lcshxxgzzyxgs@3158.com</span><br><span class="line">bt_longhua@sina.com</span><br><span class="line">lianyou@13566170918.com</span><br><span class="line">qxb555@vip.sohu.com</span><br><span class="line">root@xsp2.com</span><br><span class="line">cileeautoparts@163.com</span><br><span class="line">108@china114bst.net</span><br><span class="line">fjsly@publ.qz.fj</span><br><span class="line">deying@deyingmotor.com</span><br><span class="line">ko5186@126.com</span><br><span class="line">jinniutx@njjn.com</span><br><span class="line">lirenfushi@126.com</span><br><span class="line">NO@NO.com</span><br><span class="line">huada88@sohu.com</span><br><span class="line">yaxinus@hotmail.com</span><br><span class="line">admin@jsgdjc.com</span><br><span class="line">zcjd@163.com</span><br><span class="line">sales@jshaifeng.com</span><br><span class="line">waitting16@163.com</span><br><span class="line">info@haixia.cc</span><br><span class="line">jetski777@hotmail.com</span><br><span class="line">bode@tsxidi.com</span><br><span class="line">lilujia@vip.sina.com  特殊格式</span><br><span class="line">trade@yongshengwiremesh.com</span><br><span class="line">qianzhen0523@sina.com</span><br><span class="line">talent@kailirazor.com</span><br><span class="line">management@3dmould.com</span><br><span class="line">baoli@baoli.cn</span><br><span class="line">czslyxgs@163.com</span><br><span class="line">......省略一部分结果</span><br></pre></td></tr></table></figure>
+<p>结果中有一部分被省略，需要的自己运行一遍…..</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java/">Java</a><a href="/tags/正则表达式/">正则表达式</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://callmerun.github.io/post/简单网络爬虫-以及Email正则表达式/" data-title="简单网络爬虫 以及Email正则表达式 | 陆地行走的鱼" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/post/Atom软件的一些使用纪要/" title="Atom软件的一些使用纪要">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Atom软件的一些使用纪要</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/post/简单Java-Socket聊天室/"  title="简单Java Socket聊天室">
+ <strong>下一篇：</strong><br/> 
+ <span>简单Java Socket聊天室
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java源码"><span class="toc-number">1.</span> <span class="toc-text">Java源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结果"><span class="toc-number">2.</span> <span class="toc-text">结果</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Blog/" title="Blog">Blog<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>16</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Linux/" title="Linux">Linux<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>15</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CentOS/" title="CentOS">CentOS<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GitHub/" title="GitHub">GitHub<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/工具/" title="工具">工具<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Blog/" title="Blog">Blog<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/项目/" title="项目">项目<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习/" title="学习">学习<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/面试/" title="面试">面试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/windows/" title="windows">windows<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/正则表达式/" title="正则表达式">正则表达式<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Mr.Run. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016
+		
+		<a href="/about" target="_blank" title="Callmerun">Callmerun</a>
+		
+
+		</p>
+		<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','NqEsrzxhg1oBfYygK5q5','2.0.0');
+</script>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
