@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Aubrey Garden]]></title>
+  <subtitle><![CDATA[Keep Calm and Carry On]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://callmerun.github.io/"/>
+  <updated>2016-01-25T09:15:58.771Z</updated>
+  <id>http://callmerun.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Callmerun]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Java 泛型]]></title>
+    <link href="http://callmerun.github.io/post/Java-%E6%B3%9B%E5%9E%8B/"/>
+    <id>http://callmerun.github.io/post/Java-泛型/</id>
+    <published>2016-01-25T09:12:30.000Z</published>
+    <updated>2016-01-25T09:15:58.771Z</updated>
+    <content type="html"><![CDATA[<p>去看</p>
+<blockquote>
+<p>Java深度历险（五）——Java泛型<br><a href="http://www.infoq.com/cn/articles/cf-java-generics#" target="_blank" rel="external">http://www.infoq.com/cn/articles/cf-java-generics#</a></p>
+</blockquote>
+<p>这个说的比较透彻！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>去看</p>
+<blockquote>
+<p>Java深度历险（五）——Java泛型<br><a href="http://www.infoq.com/cn/articles/cf-java-generics#" target="_blank" rel="external"]]>
+    </summary>
+    
+      <category term="Java" scheme="http://callmerun.github.io/tags/Java/"/>
+    
+      <category term="文章" scheme="http://callmerun.github.io/tags/%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于Java多线程的一些知识补充]]></title>
+    <link href="http://callmerun.github.io/post/%E5%85%B3%E4%BA%8EJava%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/"/>
+    <id>http://callmerun.github.io/post/关于Java多线程的一些知识补充/</id>
+    <published>2016-01-25T07:16:55.000Z</published>
+    <updated>2016-01-25T07:25:14.204Z</updated>
+    <content type="html"><![CDATA[<p>JAVA多线程同步主要依赖于若干方法和关键字</p>
+<p>1 wait方法：</p>
+<blockquote>
+<p>该方法属于<code>Object</code>的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用wait所在的代码块的锁，并在其他线程调用notify或者notifyAll方法时恢复到竞争锁状态（一旦获得锁就恢复执行）。</p>
+<p>调用wait方法需要注意几点：</p>
+<p>第一点：wait被调用的时候必须在拥有锁（即<code>synchronized</code>修饰的）的代码块中。</p>
+<p>第二点：恢复执行后，从wait的下一条语句开始执行，因而wait方法总是应当在<code>while循环</code>中调用，以免出现恢复执行后继续执行的条件不满足却继续执行的情况。</p>
+<p>第三点：若wait方法参数中带时间，则除了notify和notifyAll被调用能激活处于wait状态（等待状态）的线程进入锁竞争外，在其他线程中interrupt它或者参数时间到了之后，该线程也将被激活到竞争状态。</p>
+<p>第四点：wait方法被调用的线程必须获得之前执行到wait时释放掉的锁重新获得才能够恢复执行。</p>
+</blockquote>
+<p>2  notify方法和notifyAll方法：</p>
+<blockquote>
+<p>notify方法通知调用了wait方法，但是尚未激活的一个线程进入线程调度队列（即进入锁竞争），注意不是立即执行。并且具体是哪一个线程不能保证。另外一点就是被唤醒的这个线程一定是在等待wait所释放的锁。</p>
+<p>notifyAll方法则唤醒所有调用了wait方法，尚未激活的进程进入竞争队列。</p>
+</blockquote>
+<p>3 synchronized关键字：</p>
+<blockquote>
+<p>第一点：synchronized用来标识一个普通方法时，表示一个线程要执行该方法，必须取得该方法所在的对象的锁。</p>
+<p>第二点：synchronized用来标识一个静态方法时，表示一个线程要执行该方法，必须获得该方法所在的类的类锁。</p>
+<p>第三点：synchronized修饰一个代码块。类似这样：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(obj) &#123;</span><br><span class="line">    <span class="comment">//code....</span></span><br><span class="line">&#125;。</span><br></pre></td></tr></table></figure></p>
+<p>表示一个线程要执行该代码块，必须获得<code>obj</code>的锁。这样做的目的是减小锁的粒度，保证当不同块所需的锁不冲突时不用对整个对象加锁。利用零长度的byte数组对象做obj非常经济。</p>
+</blockquote>
+<p>4 atomic action（原子操作）：</p>
+<blockquote>
+<p>在JAVA中，以下两点操作是原子操作。但是c和c++中并不如此。</p>
+<ul>
+<li>第一点：对引用变量和除了long和double之外的原始数据类型变量进行读写。</li>
+<li>第二点：对所有声明为volatile的变量（包括long和double）的读写。</li>
+<li>另外：在java.util.concurrent和java.util.concurrent.atomic包中提供了一些不依赖于同步机制的线程安全的类和方法。</li>
+</ul>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>JAVA多线程同步主要依赖于若干方法和关键字</p>
+<p>1 wait方法：</p>
+<blockquote>
+<p>该方法属于<code>Object</code>的方法，wait方法的作用是使得当前调用wait方法所在部分（代码块）的线程停止执行，并释放当前获得的调用]]>
+    </summary>
+    
+      <category term="Java" scheme="http://callmerun.github.io/tags/Java/"/>
+    
+      <category term="多线程" scheme="http://callmerun.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[hexo具体配置参考]]></title>
+    <link href="http://callmerun.github.io/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+    <id>http://callmerun.github.io/post/第一篇文章/</id>
+    <published>2015-01-14T13:31:42.000Z</published>
+    <updated>2016-01-25T03:02:56.318Z</updated>
+    <content type="html"><![CDATA[<p>如何使用 Jacman 主题（官方）</p>
+<p><a href="http://wuchong.me/blog/2014/11/20/how-to-use-jacman/" target="_blank" rel="external">http://wuchong.me/blog/2014/11/20/how-to-use-jacman/</a></p>
+<p>hexo具体配置参考</p>
+<p><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">http://ibruce.info/2013/11/22/hexo-your-blog/</a></p>
+<p><a href="http://zipperary.com/archives/" target="_blank" rel="external">http://zipperary.com/archives/</a></p>
+<p>使用GitHub和Hexo搭建免费静态Blog<br><a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">http://wsgzao.github.io/post/hexo-guide/</a></p>
+<p>如何搭建一个独立博客——简明 Github Pages与 jekyll 教程<br><a href="http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/" target="_blank" rel="external">http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/</a></p>
+<p>一步步在GitHub上创建博客主页(1)<br><a href="http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html" target="_blank" rel="external">http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html</a></p>
+<p>Markdown语法<br><a href="http://www.markdown.cn/" target="_blank" rel="external">http://www.markdown.cn/</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>如何使用 Jacman 主题（官方）</p>
+<p><a href="http://wuchong.me/blog/2014/11/20/how-to-use-jacman/" target="_blank" rel="external">http://wuchong.me]]>
+    </summary>
+    
+      <category term="博客" scheme="http://callmerun.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="文章" scheme="http://callmerun.github.io/tags/%E6%96%87%E7%AB%A0/"/>
+    
+      <category term="blog" scheme="http://callmerun.github.io/categories/blog/"/>
+    
+  </entry>
+  
+</feed>

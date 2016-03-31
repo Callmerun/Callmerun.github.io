@@ -1,0 +1,112 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 陆地行走的鱼 #站点名，站点左上角
+subtitle: 爱编程，爱生活，不羁放纵爱自由
+description:  陆地行走的鱼是一个搭建在GitHub上的静态博客，用简单而清晰的写作方式`Markdown`分享自己的心得体会。  #给搜索引擎看的，对站点的描述，可以自定义
+author: Callmerun  #在站点左下角可以看到
+email: runbeyondmove@gmail.com  #你的联系邮箱
+language: zh-CN
+timezone:
+
+# URL  #这项暂不配置，绑定域名后，欲创建sitemap.xml需要配置该项
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+#url: http://yoursite.com
+url: http://callmerun.github.io
+root: /
+#permalink: :year/:month/:day/:title/
+permalink: post/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing   文章布局、写作格式的定义，不修改
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination    每页显示文章数，可以自定义
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions    这里配置站点所用主题和插件
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+##theme: landscape
+theme: jacman
+stylus:
+  compress: true
+
+# Deployment  站点部署到github要配置
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  message: "update"
+  repository: https://github.com/Callmerun/Callmerun.github.io.git
+  branch: master
+  #branch: gh-pages
+
+# Markdown
+## https://github.com/chjj/marked
+markdown:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
+# Others
+index_generator:
+  per_page: 10 ##��ҳĬ��10ƪ���±��� ���ֵΪ0����ҳ
+
+archive_generator:
+    per_page: 0 ##�鵵ҳ��Ĭ��10ƪ���±���
+    yearly: true  ##��������ͼ
+    monthly: true ##��������ͼ
+
+tag_generator:
+    per_page: 0 ##��ǩ����ҳ��Ĭ��10ƪ����
+
+category_generator:
+    per_page: 0 ###����ҳ��Ĭ��10ƪ����
+
+feed:
+    type: atom ##feed���� atom����rss2
+    path: atom.xml ##feed·��
+    limit: 20  ##feed������С����
